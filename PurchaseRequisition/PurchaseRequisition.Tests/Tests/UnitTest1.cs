@@ -1,7 +1,9 @@
-﻿//using System;
+﻿using System;
 //using Microsoft.VisualStudio.TestTools.UnitTesting;
-//using PurchaseRequisition;
+using PurchaseRequisition;
 using Xunit;
+using System.Threading.Tasks; 
+
 
 namespace PurchaseRequisition.Tests
 {    
@@ -17,6 +19,7 @@ namespace PurchaseRequisition.Tests
         [Fact]
         public void PassingTest()
         {
+            Console.WriteLine("In Passing Test");
             Assert.Equal(4, Add(2, 2));
         }
 

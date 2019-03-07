@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PurchaseRequisition", "Purc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PurchaseRequisition.Tests", "PurchaseRequisition.Tests\PurchaseRequisition.Tests.csproj", "{A1A22A5C-B4A9-4A18-A795-14DC936E1FA8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{F91F9B73-8BDF-4205-84CC-11B6F4EF287A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A1A22A5C-B4A9-4A18-A795-14DC936E1FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1A22A5C-B4A9-4A18-A795-14DC936E1FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1A22A5C-B4A9-4A18-A795-14DC936E1FA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F91F9B73-8BDF-4205-84CC-11B6F4EF287A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F91F9B73-8BDF-4205-84CC-11B6F4EF287A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F91F9B73-8BDF-4205-84CC-11B6F4EF287A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F91F9B73-8BDF-4205-84CC-11B6F4EF287A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
