@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\PurchaseRequisition",
+    "\\PurchaseRequisition\\PurchaseRequisition",
+    "\\PurchaseRequisition\\PurchaseRequisition.Tests",
+    "\\PurchaseRequisition\\PurchaseRequisition.Tests\\Tests",
+    "\\PurchaseRequisition\\PurchaseRequisition\\Controllers",
+    "\\PurchaseRequisition\\PurchaseRequisition\\Models",
+    "\\PurchaseRequisition\\PurchaseRequisition\\Models\\Entities"
+  ],
+  "SelectedNode": "\\PurchaseRequisition\\PurchaseRequisition.Tests\\Tests\\UnitTest1.cs",
+  "PreviewInSolutionExplorer": false
+}
