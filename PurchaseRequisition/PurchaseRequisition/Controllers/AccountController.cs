@@ -134,11 +134,15 @@ namespace PurchaseRequisition.Controllers
             }
         }
 
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         //
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.DepartmentID = new SelectList(db.Departments, "ID", "DepartmentName");
+            ViewBag.RoomID = new SelectList(db.Rooms, "ID", "RoomName");
             return View();
         }
 
@@ -151,18 +155,19 @@ namespace PurchaseRequisition.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new Employee { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Active = model.Active, DepartmentID = model.DepartmentID, RoomID = model.RoomID };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
+                    ViewBag.DepartmentID = new SelectList(db.Departments, "ID", "DepartmentName", model.DepartmentID);
+                    ViewBag.DivisionID = new SelectList(db.Rooms, "ID", "RoomName", model.RoomID);
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
@@ -367,7 +372,7 @@ namespace PurchaseRequisition.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new Employee { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

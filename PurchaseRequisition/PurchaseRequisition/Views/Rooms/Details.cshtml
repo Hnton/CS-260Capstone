@@ -1,0 +1,58 @@
+﻿@model PurchaseRequisition.Models.Room
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Room</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Campus.CampusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Campus.CampusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeStamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
