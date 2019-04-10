@@ -337,25 +337,19 @@
     <Compile Include="Controllers\DivisionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\RequestsController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\VendorsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904031822550_Initial.cs" />
-    <Compile Include="Migrations\201904031822550_Initial.Designer.cs">
-      <DependentUpon>201904031822550_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904031825150_a.cs" />
-    <Compile Include="Migrations\201904031825150_a.Designer.cs">
-      <DependentUpon>201904031825150_a.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904091726516_datemade.cs" />
-    <Compile Include="Migrations\201904091726516_datemade.Designer.cs">
-      <DependentUpon>201904091726516_datemade.cs</DependentUpon>
+    <Compile Include="Migrations\201904101706587_Initial.cs" />
+    <Compile Include="Migrations\201904101706587_Initial.Designer.cs">
+      <DependentUpon>201904101706587_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Base\EntityBase.cs" />
@@ -503,6 +497,13 @@
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -521,14 +522,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904031822550_Initial.resx">
-      <DependentUpon>201904031822550_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904031825150_a.resx">
-      <DependentUpon>201904031825150_a.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904091726516_datemade.resx">
-      <DependentUpon>201904091726516_datemade.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904101706587_Initial.resx">
+      <DependentUpon>201904101706587_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

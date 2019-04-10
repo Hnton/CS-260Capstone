@@ -52,9 +52,9 @@ namespace PurchaseRequisition.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "UserName")]
+
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -80,6 +80,10 @@ namespace PurchaseRequisition.Models
 
         [DefaultValue(true)]
         public bool Active { get; set; }
+
+        [Required]
+        [Display(Name = "UserRoles")]
+        public string UserRoles { get; set; }
 
         [ForeignKey(nameof(DepartmentID))]
         public Department Department { get; set; }
