@@ -51,5 +51,9 @@ namespace PurchaseRequisition.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<PurchaseRequisition.Models.ViewModels.CampusWithAddress> CampusWithAddresses { get; set; }
+
+        public System.Data.Entity.DbSet<PurchaseRequisition.Models.ViewModels.BudgetCodeWithBudgetAmount> BudgetCodeWithBudgetAmounts { get; set; }
     }
 }
