@@ -1,0 +1,112 @@
+﻿@model PurchaseRequisition.Models.Request
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Request</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.ItemName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.ItemName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.BusinessJustification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.BusinessJustification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vendor.VendorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vendor.VendorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityRequested)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityRequested)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstimatedCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstimatedCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstimatedTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstimatedTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaidCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaidCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaidTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaidTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chosen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chosen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReasonChosen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReasonChosen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeStamp)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

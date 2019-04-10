@@ -11,7 +11,6 @@ namespace PurchaseRequisition.Models
     public class Order : EntityBase
     {
         [DataType(DataType.Date)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime DateMade { get; set; }
 
         [DataType(DataType.Date)]

@@ -338,6 +338,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\RequestsController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\VendorsController.cs" />
@@ -351,6 +352,10 @@
     <Compile Include="Migrations\201904031825150_a.cs" />
     <Compile Include="Migrations\201904031825150_a.Designer.cs">
       <DependentUpon>201904031825150_a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904091726516_datemade.cs" />
+    <Compile Include="Migrations\201904091726516_datemade.Designer.cs">
+      <DependentUpon>201904091726516_datemade.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Base\EntityBase.cs" />
@@ -473,11 +478,6 @@
     <Content Include="Views\Items\Details.cshtml" />
     <Content Include="Views\Items\Edit.cshtml" />
     <Content Include="Views\Items\Index.cshtml" />
-    <Content Include="Views\Orders\Create.cshtml" />
-    <Content Include="Views\Orders\Delete.cshtml" />
-    <Content Include="Views\Orders\Details.cshtml" />
-    <Content Include="Views\Orders\Edit.cshtml" />
-    <Content Include="Views\Orders\Index.cshtml" />
     <Content Include="Views\Status\Create.cshtml" />
     <Content Include="Views\Status\Delete.cshtml" />
     <Content Include="Views\Status\Details.cshtml" />
@@ -493,6 +493,16 @@
     <Content Include="Views\BudgetCodes\Details.cshtml" />
     <Content Include="Views\BudgetCodes\Edit.cshtml" />
     <Content Include="Views\BudgetCodes\Index.cshtml" />
+    <Content Include="Views\Requests\Create.cshtml" />
+    <Content Include="Views\Requests\Delete.cshtml" />
+    <Content Include="Views\Requests\Details.cshtml" />
+    <Content Include="Views\Requests\Edit.cshtml" />
+    <Content Include="Views\Requests\Index.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -516,6 +526,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904031825150_a.resx">
       <DependentUpon>201904031825150_a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904091726516_datemade.resx">
+      <DependentUpon>201904091726516_datemade.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
