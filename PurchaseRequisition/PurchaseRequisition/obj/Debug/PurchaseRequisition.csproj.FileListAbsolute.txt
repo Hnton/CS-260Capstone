@@ -602,3 +602,4 @@ C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRe
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.pdb
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.Migrations.SomeViewModels.resources
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.Migrations.anothr.resources
+C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.Migrations.moreviews.resources

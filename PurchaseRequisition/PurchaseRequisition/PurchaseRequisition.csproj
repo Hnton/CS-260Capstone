@@ -362,6 +362,10 @@
     <Compile Include="Migrations\201904051401505_anothr.Designer.cs">
       <DependentUpon>201904051401505_anothr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904081523518_more views.cs" />
+    <Compile Include="Migrations\201904081523518_more views.Designer.cs">
+      <DependentUpon>201904081523518_more views.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Base\EntityBase.cs" />
     <Compile Include="Models\ViewModels\AccountViewModels.cs" />
@@ -380,6 +384,7 @@
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ViewModels\AttachmentViewModel.cs" />
     <Compile Include="Models\ViewModels\BudgetCodeWithBudgetAmount.cs" />
+    <Compile Include="Models\ViewModels\BudgetCodeWithBudgetAmountsController.cs" />
     <Compile Include="Models\ViewModels\CampusWithAddress.cs" />
     <Compile Include="Models\ViewModels\DepartmentWithDivision.cs" />
     <Compile Include="Models\ViewModels\DivisionWithSupervisor.cs" />
@@ -521,6 +526,11 @@
     <Content Include="Views\CampusWithAddresses\Details.cshtml" />
     <Content Include="Views\CampusWithAddresses\Edit.cshtml" />
     <Content Include="Views\CampusWithAddresses\Index.cshtml" />
+    <Content Include="Views\BudgetCodeWithBudgetAmounts\Create.cshtml" />
+    <Content Include="Views\BudgetCodeWithBudgetAmounts\Delete.cshtml" />
+    <Content Include="Views\BudgetCodeWithBudgetAmounts\Details.cshtml" />
+    <Content Include="Views\BudgetCodeWithBudgetAmounts\Edit.cshtml" />
+    <Content Include="Views\BudgetCodeWithBudgetAmounts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -550,6 +560,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904051401505_anothr.resx">
       <DependentUpon>201904051401505_anothr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904081523518_more views.resx">
+      <DependentUpon>201904081523518_more views.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
