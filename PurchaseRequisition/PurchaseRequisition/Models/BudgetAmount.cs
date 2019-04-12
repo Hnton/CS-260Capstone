@@ -6,7 +6,7 @@ namespace PurchaseRequisition.Models
 {
     [Table("BudgetAmounts", Schema = "User")]
     public class BudgetAmount : EntityBase
-    {    
+    {
         [DataType(DataType.Currency)]
         public decimal TotalAmount { get; set; }
 
@@ -14,5 +14,7 @@ namespace PurchaseRequisition.Models
         public BudgetCode BudgetCode { get; set; }
 
         public int BudgetCodeID { get; set; }
+
+        
     }
 }

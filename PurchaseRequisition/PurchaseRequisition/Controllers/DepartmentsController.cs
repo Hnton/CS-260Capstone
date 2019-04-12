@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PurchaseRequisition.Models;
+using PurchaseRequisition.Models.ViewModels;
 
 namespace PurchaseRequisition.Controllers
 {
@@ -19,6 +20,32 @@ namespace PurchaseRequisition.Controllers
         {
             var departments = db.Departments.Include(d => d.Division);
             return View(departments.ToList());
+        }
+
+        // Display BudgetCodes with Amount
+        public ActionResult DepartmentsWithDivision()
+        {
+            var list = (from d in db.Departments
+                        join div in db.Divisions
+                        on d.ID equals div.ID into ThisList
+                        from div in ThisList.DefaultIfEmpty()
+                        select new
+                        {
+                            DepartmentName = d.DepartmentName,
+                            Active = d.Active,
+                            DivisionName = div.DivisionName
+
+
+                        }).ToList()
+                        .Select(x => new DepartmentWithDivisionViewModels()
+                        {
+                            DepartmentName = x.DepartmentName,
+                            Active = x.Active,                           
+                            DivisionName = x.DivisionName
+                        });
+
+            return View(list);
+
         }
 
         // GET: Departments/Details/5

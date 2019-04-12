@@ -20,18 +20,50 @@ namespace PurchaseRequisition.Controllers
 
                 if (isAdminUser())
                 {
-                    ViewBag.displayMenu = "Yes";
+                    ViewBag.displayMenu = "Admin";
+                    return RedirectToAction("Index", "Admin");
                 }
-                return View();
+
+                else if(isAuditorUser())
+                {
+                    ViewBag.displayMenu = "Auditor";                
+                    return RedirectToAction("Index", "Auditor");
+                }
+
+                else if (isUser())
+                {
+                    ViewBag.displayMenu = "User";
+                    return RedirectToAction("Index", "User");
+                }
+
+                else if (isCFOUser())
+                {
+                    ViewBag.displayMenu = "CFO";
+                    return RedirectToAction("Index", "CFO");
+                }
+
+                else if (isPurchasingUser())
+                {
+                    ViewBag.displayMenu = "Purchasing";
+                    return RedirectToAction("Index", "Purchasing");
+                }
+
+                else if (isSupervisorUser())
+                {
+                    ViewBag.displayMenu = "Supervisor";
+                    return RedirectToAction("Index", "Supervisor");
+                }
+
             }
             else
             {
-                ViewBag.Name = "Not Logged IN";
+                ViewBag.Name = "Please Sign in";
             }
             return View();
 
         }
 
+        // Function to see if user is admin
         public Boolean isAdminUser()
         {
             if (User.Identity.IsAuthenticated)
@@ -52,18 +84,109 @@ namespace PurchaseRequisition.Controllers
             return false;
         }
 
-        public ActionResult About()
+        // Function to see if user is only user
+        public Boolean isUser()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = User.Identity;
+                ApplicationDbContext context = new ApplicationDbContext();
+                var UserManager = new UserManager<Employee>(new UserStore<Employee>(context));
+                var s = UserManager.GetRoles(user.GetUserId());
+                if (s[0].ToString() == "User")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
         }
 
-        public ActionResult Contact()
+        // Function to see if user is CFO
+        public Boolean isCFOUser()
         {
-            ViewBag.Message = "Your contact page.";
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = User.Identity;
+                ApplicationDbContext context = new ApplicationDbContext();
+                var UserManager = new UserManager<Employee>(new UserStore<Employee>(context));
+                var s = UserManager.GetRoles(user.GetUserId());
+                if (s[0].ToString() == "CFO")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
 
-            return View();
+        // Function to see if user is Auditor
+        public Boolean isAuditorUser()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = User.Identity;
+                ApplicationDbContext context = new ApplicationDbContext();
+                var UserManager = new UserManager<Employee>(new UserStore<Employee>(context));
+                var s = UserManager.GetRoles(user.GetUserId());
+                if (s[0].ToString() == "Auditor")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
+
+        // Function to see if user is Purchasing
+        public Boolean isPurchasingUser()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = User.Identity;
+                ApplicationDbContext context = new ApplicationDbContext();
+                var UserManager = new UserManager<Employee>(new UserStore<Employee>(context));
+                var s = UserManager.GetRoles(user.GetUserId());
+                if (s[0].ToString() == "Purchasing")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
+
+        // Function to see if user is Supervisor
+        public Boolean isSupervisorUser()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = User.Identity;
+                ApplicationDbContext context = new ApplicationDbContext();
+                var UserManager = new UserManager<Employee>(new UserStore<Employee>(context));
+                var s = UserManager.GetRoles(user.GetUserId());
+                if (s[0].ToString() == "Supervisor")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
         }
     }
 }

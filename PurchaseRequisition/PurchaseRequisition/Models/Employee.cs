@@ -11,10 +11,7 @@ namespace PurchaseRequisition.Models
 {
     [Table("Employees", Schema = "User")]
     public class Employee : IdentityUser
-    {
-        [NotMapped]
-        public string FullName => FirstName + " " + LastName;
-        
+    {   
         [DataType(DataType.Text)]
         public string FirstName { get; set; }
 

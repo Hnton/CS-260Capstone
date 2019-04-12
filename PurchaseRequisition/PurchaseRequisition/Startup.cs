@@ -25,8 +25,10 @@ namespace PurchaseRequisition
             // creating Creating Supervisor role    
             if (!roleManager.RoleExists("Supervisor"))
             {
-                var role = new IdentityRole();
-                role.Name = "Supervisor";
+                var role = new IdentityRole
+                {
+                    Name = "Supervisor"
+                };
                 roleManager.Create(role);
 
             }
@@ -34,8 +36,10 @@ namespace PurchaseRequisition
             // Creating Purchasing role    
             if (!roleManager.RoleExists("Purchasing"))
             {
-                var role = new IdentityRole();
-                role.Name = "Purchasing";
+                var role = new IdentityRole
+                {
+                    Name = "Purchasing"
+                };
                 roleManager.Create(role);
 
             }
@@ -43,8 +47,10 @@ namespace PurchaseRequisition
             // Creating Auditor role    
             if (!roleManager.RoleExists("Auditor"))
             {
-                var role = new IdentityRole();
-                role.Name = "Auditor";
+                var role = new IdentityRole
+                {
+                    Name = "Auditor"
+                };
                 roleManager.Create(role);
 
             }
@@ -52,8 +58,10 @@ namespace PurchaseRequisition
             // Creating CFO role    
             if (!roleManager.RoleExists("CFO"))
             {
-                var role = new IdentityRole();
-                role.Name = "CFO";
+                var role = new IdentityRole
+                {
+                    Name = "CFO"
+                };
                 roleManager.Create(role);
 
             }
@@ -61,8 +69,10 @@ namespace PurchaseRequisition
             // Creating User role    
             if (!roleManager.RoleExists("User"))
             {
-                var role = new IdentityRole();
-                role.Name = "User";
+                var role = new IdentityRole
+                {
+                    Name = "User"
+                };
                 roleManager.Create(role);
             }
 
@@ -73,18 +83,22 @@ namespace PurchaseRequisition
             {
 
                 //first we create Admin rool
-                var role = new IdentityRole();
-                role.Name = "Admin";
+                var role = new IdentityRole
+                {
+                    Name = "Admin"
+                };
                 roleManager.Create(role);
 
                 //Here we create a Admin super user who will maintain the website
 
-                var user = new Employee();
-                user.UserName = "ADMIN";
-                user.Email = "Admin@Develop.com";
-                user.FirstName = "ADMIN";
-                user.LastName = "ADMIN";
-                user.Active = true;
+                var user = new Employee
+                {
+                    UserName = "ADMIN",
+                    Email = "Admin@Develop.com",
+                    FirstName = "ADMIN",
+                    LastName = "ADMIN",
+                    Active = true
+                };
 
                 string userPWD = "Admin1234!";
 

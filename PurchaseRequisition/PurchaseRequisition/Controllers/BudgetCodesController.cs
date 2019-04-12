@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PurchaseRequisition.Models;
+using PurchaseRequisition.Models.ViewModels;
 
 namespace PurchaseRequisition.Controllers
 {
@@ -18,6 +19,36 @@ namespace PurchaseRequisition.Controllers
         public ActionResult Index()
         {
             return View(db.BudgetCodes.ToList());
+        }
+
+        // Display BudgetCodes with Amount
+        public ActionResult BudgetCodesWithAmount()
+        {
+            var list = (from c in db.BudgetCodes
+                        join a in db.BudgetAmounts
+                        on c.ID equals a.ID into ThisList
+                        from a in ThisList.DefaultIfEmpty()
+                        select new
+                        {
+                            DA_CODE = c.DA_CODE,
+                            BudgetCodeName = c.BudgetCodeName,
+                            Type = c.Type,
+                            Active = c.Active,
+                            TotalAmount = a.TotalAmount
+                           
+
+                        }).ToList()
+                        .Select(x => new BudgetCodeWithAmountViewModels()
+                        {
+                            DA_CODE = x.DA_CODE,
+                            BudgetCodeName = x.BudgetCodeName,
+                            Type = x.Type,
+                            Active = x.Active,
+                            TotalAmount = x.TotalAmount
+                        });
+
+            return View(list);
+
         }
 
         // GET: BudgetCodes/Details/5

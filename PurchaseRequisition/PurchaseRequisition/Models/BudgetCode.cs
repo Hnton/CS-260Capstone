@@ -17,10 +17,11 @@ namespace PurchaseRequisition.Models
         public string BudgetCodeName { get; set; }
 
         [Required]
+        [Display(Name = "Annual")]
         public bool Type { get; set; }
 
         [DefaultValue(true)]
-        public bool Active { get; set; } = true;
+        public bool Active { get; set; }
 
         [InverseProperty(nameof(BudgetAmount.BudgetCode))]
         public List<BudgetAmount> BudgetAmounts { get; set; } = new List<BudgetAmount>();

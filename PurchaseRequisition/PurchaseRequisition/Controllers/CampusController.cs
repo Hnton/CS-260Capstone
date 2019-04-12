@@ -7,11 +7,13 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PurchaseRequisition.Models;
+using PurchaseRequisition.Models.ViewModels;
 
 namespace PurchaseRequisition.Controllers
 {
     public class CampusController : Controller
     {
+        
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Campus
@@ -19,6 +21,66 @@ namespace PurchaseRequisition.Controllers
         {
             var campuses = db.Campuses.Include(c => c.Address);
             return View(campuses.ToList());
+        }
+
+        // Display Campuses with Address
+        public ActionResult CampusWithAddress()
+        {
+            var list = (from c in db.Campuses
+                        join a in db.Addresses
+                        on c.ID equals a.ID into ThisList
+                        from a in ThisList.DefaultIfEmpty()
+                        select new
+                        {
+                            CampusName = c.CampusName,
+                            Active = c.Active,
+                            City = a.City,
+                            State = a.State,
+                            StreetAddress = a.StreetAddress,
+                            ZIP = a.ZIP
+
+                        }).ToList()
+                        .Select(x => new CampusWithAddressViewModels()
+                        {
+                            CampusName = x.CampusName,
+                            Active = x.Active,
+                            City = x.City,
+                            State = x.State,
+                            StreetAddress = x.StreetAddress,
+                            ZIP = x.ZIP
+                        });
+
+            return View(list);
+                        
+        }
+
+
+
+        // GET: CampusWithAddress
+        public ActionResult DetailsCampusWithAddress(int? id)
+        {
+            var campus = db.Campuses.Include("Address").Where(x => x.ID == id).FirstOrDefault();
+            if(id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            if( campus == null)
+            {
+                return HttpNotFound();
+            }
+
+            CampusWithAddressViewModels models = new CampusWithAddressViewModels()
+            {
+                CampusName = campus.CampusName,
+                Active = campus.Active,
+                City = campus.Address.City,
+                State = campus.Address.State,
+                StreetAddress = campus.Address.StreetAddress,
+                ZIP = campus.Address.ZIP,
+            };
+            return View(models);
+        
         }
 
         // GET: Campus/Details/5

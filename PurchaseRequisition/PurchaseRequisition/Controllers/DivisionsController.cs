@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PurchaseRequisition.Models;
+using PurchaseRequisition.Models.ViewModels;
 
 namespace PurchaseRequisition.Controllers
 {
@@ -19,6 +20,32 @@ namespace PurchaseRequisition.Controllers
         {
             var divisions = db.Divisions.Include(d => d.Supervisor);
             return View(divisions.ToList());
+        }
+
+        // Display Divisions with Supervisor
+        public ActionResult DivisionsWithSupervisor()
+        {
+            var list = (from d in db.Divisions
+                        join e in db.Employees
+                        on d.SupervisorID equals e.Id into ThisList
+                        from e in ThisList.DefaultIfEmpty()
+                        select new
+                        {
+                            DivisionName = d.DivisionName,
+                            Active = d.Active,
+                            SupervisorName = e.FirstName + " " + e.LastName,
+
+
+                        }).ToList()
+                        .Select(x => new DivisionWithSupervisorViewModels()
+                        {
+                            DivisionName = x.DivisionName,
+                            Active = x.Active,
+                            SupervisorName = x.SupervisorName
+                        });
+
+            return View(list);
+
         }
 
         // GET: Divisions/Details/5
