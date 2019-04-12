@@ -537,6 +537,9 @@
     <Content Include="Views\EmployeesBudgetCodes\Details.cshtml" />
     <Content Include="Views\EmployeesBudgetCodes\Edit.cshtml" />
     <Content Include="Views\EmployeesBudgetCodes\Index.cshtml" />
+    <Content Include="Views\Account\EmployeeWithDepartmentRoomRole.cshtml" />
+    <Content Include="Views\Rooms\RoomWithCampus.cshtml" />
+    <Content Include="Views\Vendors\VendorWithAddress.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

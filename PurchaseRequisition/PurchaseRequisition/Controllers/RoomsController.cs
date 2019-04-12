@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PurchaseRequisition.Models;
+using PurchaseRequisition.Models.ViewModels;
 
 namespace PurchaseRequisition.Controllers
 {
@@ -19,6 +20,34 @@ namespace PurchaseRequisition.Controllers
         {
             var rooms = db.Rooms.Include(r => r.Campus);
             return View(rooms.ToList());
+        }
+
+        // Display Divisions with Supervisor
+        public ActionResult RoomWithCampus()
+        {
+            var list = (from r in db.Rooms
+                        join c in db.Campuses
+                        on r.CampusID equals c.ID into ThisList
+                        from c in ThisList.DefaultIfEmpty()
+                        select new
+                        {
+                           RoomCode = r.RoomCode,
+                           RoomName = r.RoomName,
+                           Active = r.Active,
+                           CampusName = c.CampusName,
+
+
+                        }).ToList()
+                        .Select(x => new RoomWithCampusViewModels()
+                        {
+                            RoomCode = x.RoomCode,
+                            RoomName = x.RoomName,
+                            Active = x.Active,
+                            CampusName = x.CampusName,
+                        });
+
+            return View(list);
+
         }
 
         // GET: Rooms/Details/5

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PurchaseRequisition.Models;
+using PurchaseRequisition.Models.ViewModels;
 
 namespace PurchaseRequisition.Controllers
 {
@@ -19,6 +20,42 @@ namespace PurchaseRequisition.Controllers
         {
             var vendors = db.Vendors.Include(v => v.Address);
             return View(vendors.ToList());
+        }
+
+        // Display Vendor with Address
+        public ActionResult VendorWithAddress()
+        {
+            var list = (from v in db.Vendors
+                        join a in db.Addresses
+                        on v.AddressID equals a.ID into ThisList
+                        from a in ThisList.DefaultIfEmpty()
+                        select new
+                        {
+                            VendorName = v.VendorName,
+                            Phone = v.Phone,
+                            Fax = v.Fax,
+                            Website = v.Website,
+                            City = a.City,
+                            State = a.State,
+                            StreetAddress = a.StreetAddress,
+                            ZIP = a.ZIP
+
+
+                        }).ToList()
+                        .Select(x => new VendorWithAddressViewModels()
+                        {
+                            VendorName = x.VendorName,
+                            Phone = x.Phone,
+                            Fax = x.Fax,
+                            Website = x.Website,
+                            City = x.City,
+                            State = x.State,
+                            StreetAddress = x.StreetAddress,
+                            ZIP = x.ZIP
+                        });
+
+            return View(list);
+
         }
 
         // GET: Vendors/Details/5

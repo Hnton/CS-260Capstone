@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using PurchaseRequisition.Models;
+using PurchaseRequisition.Models.ViewModels;
 
 namespace PurchaseRequisition.Controllers
 {
@@ -18,6 +19,42 @@ namespace PurchaseRequisition.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         ApplicationDbContext context;
+
+        // Display Employee with Department,Room, and Role
+        public ActionResult EmployeeWithDepartmentRoomRole()
+        {
+
+            var list = (from e in db.Employees
+                       from roles in e.Roles
+                        join d in db.Departments on e.DepartmentID equals d.ID
+                        join m in db.Rooms on e.RoomID equals m.ID
+                        join r in db.Roles on roles.RoleId equals r.Id
+                        into ThisList
+                        from r in ThisList.DefaultIfEmpty()
+                        select new
+                        {
+                          EmployeeName = e.FirstName + " " + e.LastName,
+                          Email = e.Email,
+                          Active = e.Active,
+                          DepartmentName = d.DepartmentName,
+                          RoomName = m.RoomName,
+                          RoomCode = m.RoomCode,
+                          RoleName = r.Name
+                        }).ToList()
+                        .Select(x => new EmployeeWithDepartmentRoomRoleViewModels()
+                        {
+                            EmployeeName = x.EmployeeName,
+                            Email = x.Email,
+                            Active = x.Active,
+                            DepartmentName = x.DepartmentName,
+                            RoomName = x.RoomName,
+                            RoomCode = x.RoomCode,
+                            RoleName = x.RoleName
+                        });
+      
+            return View(list);
+
+        }
 
         public AccountController()
         {
