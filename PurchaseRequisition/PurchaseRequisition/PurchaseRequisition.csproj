@@ -354,6 +354,7 @@
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Controllers\SupervisorApprovalsController.cs" />
     <Compile Include="Controllers\SupervisorController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VendorsController.cs" />
@@ -363,6 +364,10 @@
     <Compile Include="Migrations\201904101706587_Initial.cs" />
     <Compile Include="Migrations\201904101706587_Initial.Designer.cs">
       <DependentUpon>201904101706587_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904171702429_supervisor4172019.cs" />
+    <Compile Include="Migrations\201904171702429_supervisor4172019.Designer.cs">
+      <DependentUpon>201904171702429_supervisor4172019.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Base\EntityBase.cs" />
@@ -545,6 +550,12 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Requests\RequestWithVendor.cshtml" />
     <Content Include="Views\Supervisor\SupervisorApprovalWithApproval.cshtml" />
+    <Content Include="Views\SupervisorApprovals\Create.cshtml" />
+    <Content Include="Views\SupervisorApprovals\Delete.cshtml" />
+    <Content Include="Views\SupervisorApprovals\Details.cshtml" />
+    <Content Include="Views\SupervisorApprovals\Edit.cshtml" />
+    <Content Include="Views\SupervisorApprovals\Index.cshtml" />
+    <Content Include="Views\Requests\PurchaseReqWithRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -565,6 +576,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904101706587_Initial.resx">
       <DependentUpon>201904101706587_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904171702429_supervisor4172019.resx">
+      <DependentUpon>201904171702429_supervisor4172019.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

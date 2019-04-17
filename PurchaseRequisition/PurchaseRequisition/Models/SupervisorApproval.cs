@@ -16,18 +16,16 @@ namespace PurchaseRequisition.Models
         [ForeignKey(nameof(OrderID))]
         public Order Order { get; set; }
 
-        public int? OrderID { get; set; }
+        public int OrderID { get; set; }
 
         [ForeignKey(nameof(UserRoleID))]
         public IdentityRole IdentityRole { get; set; }
 
-        [Required]
         public string UserRoleID { get; set; }
 
         [ForeignKey(nameof(SupervisorID))]
         public Employee Employee { get; set; }
 
-        [Required]
         public string SupervisorID { get; set; }
 
         [DataType(DataType.MultilineText)]

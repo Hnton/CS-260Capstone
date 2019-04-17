@@ -11,11 +11,11 @@ namespace PurchaseRequisition.Models.ViewModels
     public class PurchaseReqWithReqestViewModels : EntityBase
     {
         [Display(Name = "Requester")]
-        public string EmployeeFullName { get; set; }
+        public string EmployeeName { get; set; }
 
 
         [Display(Name = "Supervisor")]
-        public string SupervisorFullName { get; set; }
+        public string SupervisorName { get; set; }
 
         [Display(Name = "Status")]
         public string StatusName { get; set; }

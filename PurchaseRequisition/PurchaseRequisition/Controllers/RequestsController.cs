@@ -22,6 +22,42 @@ namespace PurchaseRequisition.Controllers
             return View(requests.ToList());
         }
 
+        public ActionResult PurchaseReqWithRequest()
+        {
+            var list = (from o in db.Orders
+                        join s in db.SupervisorApprovals
+                        on o.ID equals s.ID
+                        into ThisList
+                        from s in ThisList.DefaultIfEmpty()
+                        select new
+                        {
+                            EmployeeName = o.Employee.FirstName + " " + o.Employee.LastName,
+                            SupervisorName = s.Employee.FirstName + " " + s.Employee.LastName,
+                            StatusName = o.Status.StatusName,
+                            CategoryName = o.Category.CategoryName,
+                            BudgetCodeName = o.BudgetCode.BudgetCodeName,
+                            DateMade = o.DateMade,
+                            DateOrdered = o.DateOrdered,
+                            StateContract = o.StateContract,
+                            BusinessJustification = o.BusinessJustification
+                            
+                        }).ToList()
+                       .Select(x => new PurchaseReqWithReqestViewModels()
+                       {
+                           EmployeeName = x.EmployeeName,
+                           SupervisorName = x.SupervisorName,
+                           StatusName = x.StatusName,
+                           CategoryName = x.CategoryName,
+                           BudgetCodeName = x.BudgetCodeName,
+                           DateMade = x.DateMade,
+                           DateOrdered = x.DateOrdered,
+                           StateContract = x.StateContract,
+                           BusinessJustification = x.BusinessJustification
+                       });
+
+            return View(list);
+        }
+
         public ActionResult RequestWithVendor()
         {
             var list = (from r in db.Requests

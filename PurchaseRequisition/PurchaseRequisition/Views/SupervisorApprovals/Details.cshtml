@@ -1,0 +1,58 @@
+﻿@model PurchaseRequisition.Models.SupervisorApproval
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SupervisorApproval</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Approval.ApprovalName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Approval.ApprovalName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.BusinessJustification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.BusinessJustification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeniedJustification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeniedJustification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeStamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

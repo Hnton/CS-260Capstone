@@ -910,3 +910,5 @@ C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRe
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csproj.CopyComplete
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.dll
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.pdb
+C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csprojAssemblyReference.cache
+C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.Migrations.supervisor4172019.resources
