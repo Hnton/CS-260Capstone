@@ -1,0 +1,94 @@
+﻿@model IEnumerable<PurchaseRequisition.Models.ViewModels.RequestWithVendorViewModels>
+
+@{
+    ViewBag.Title = "RequestWithVendor";
+}
+
+<h2>RequestWithVendor</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantityRequested)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstimatedCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstimatedTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaidCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaidTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chosen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReasonChosen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VendorName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeStamp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantityRequested)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstimatedCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstimatedTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaidCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaidTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chosen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReasonChosen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorName)
+        </td>
+    </tr>
+}
+
+</table>

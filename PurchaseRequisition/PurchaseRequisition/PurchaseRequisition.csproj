@@ -354,6 +354,7 @@
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Controllers\SupervisorController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VendorsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -542,6 +543,8 @@
     <Content Include="Views\Rooms\RoomWithCampus.cshtml" />
     <Content Include="Views\Vendors\VendorWithAddress.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Requests\RequestWithVendor.cshtml" />
+    <Content Include="Views\Supervisor\SupervisorApprovalWithApproval.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
