@@ -4,6 +4,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using PurchaseRequisition.Initializer;
 
 namespace PurchaseRequisition.Models
 {
@@ -26,6 +27,7 @@ namespace PurchaseRequisition.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            Database.SetInitializer(new DB());
         }
 
         public DbSet<Address> Addresses { get; set; }
