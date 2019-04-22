@@ -17,9 +17,45 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+
                 @Html.ActionLink("Purchase Requisition", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Admin Page", "Index", "Admin", new { area = "" }, new { @class = "navbar-brand" })
+                    }
+
+                    if (User.IsInRole("User"))
+                    {
+
+                    }
+
+                    if (User.IsInRole("Supervisor"))
+                    {
+
+                    }
+
+                    if (User.IsInRole("CFO"))
+                    {
+
+                    }
+
+                    if (User.IsInRole("Auditor"))
+                    {
+
+                    }
+
+                    if (User.IsInRole("Purchasing"))
+                    {
+
+                    }
+                }
+
             </div>
-            <div class="navbar-collapse collapse">
+
+
+                <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @*Links for across head will go*@
                     
