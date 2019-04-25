@@ -178,7 +178,7 @@ namespace PurchaseRequisition.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         public ActionResult Register()
         {
             ViewBag.DepartmentID = new SelectList(db.Departments, "ID", "DepartmentName");
@@ -190,7 +190,7 @@ namespace PurchaseRequisition.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
