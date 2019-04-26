@@ -154,6 +154,12 @@
     <Reference Include="Microsoft.Win32.Registry, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Registry.4.5.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
       <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
     </Reference>
@@ -351,7 +357,6 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\RequestsController.cs" />
-    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\SupervisorApprovalsController.cs" />
@@ -362,9 +367,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Initializer\DB.cs" />
-    <Compile Include="Migrations\201904221923565_initial.cs" />
-    <Compile Include="Migrations\201904221923565_initial.Designer.cs">
-      <DependentUpon>201904221923565_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201904261454231_initial.cs" />
+    <Compile Include="Migrations\201904261454231_initial.Designer.cs">
+      <DependentUpon>201904261454231_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Base\EntityBase.cs" />
@@ -382,6 +387,7 @@
     <Compile Include="Models\EmployeesBudgetCodes.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\ViewModels\AdminViewModels.cs" />
     <Compile Include="Models\ViewModels\AttachmentViewModels.cs" />
     <Compile Include="Models\ViewModels\BudgetCodeWithAmountViewModels.cs" />
     <Compile Include="Models\ViewModels\CampusWithAddressViewModels.cs" />
@@ -409,6 +415,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -524,7 +531,6 @@
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
-    <Content Include="Views\Roles\Index.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
@@ -541,7 +547,7 @@
     <Content Include="Views\EmployeesBudgetCodes\Details.cshtml" />
     <Content Include="Views\EmployeesBudgetCodes\Edit.cshtml" />
     <Content Include="Views\EmployeesBudgetCodes\Index.cshtml" />
-    <Content Include="Views\Account\EmployeeWithDepartmentRoomRole.cshtml" />
+    <Content Include="Views\Admin\EmployeeWithDepartmentRoomRole.cshtml" />
     <Content Include="Views\Rooms\RoomWithCampus.cshtml" />
     <Content Include="Views\Vendors\VendorWithAddress.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
@@ -553,6 +559,10 @@
     <Content Include="Views\SupervisorApprovals\Edit.cshtml" />
     <Content Include="Views\SupervisorApprovals\Index.cshtml" />
     <Content Include="Views\Requests\PurchaseReqWithRequest.cshtml" />
+    <Content Include="Views\Admin\ListUsers.cshtml" />
+    <Content Include="Views\Admin\DeleteUsers.cshtml" />
+    <Content Include="Views\Admin\EditUsers.cshtml" />
+    <Content Include="Views\Admin\ListRoles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -571,8 +581,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904221923565_initial.resx">
-      <DependentUpon>201904221923565_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904261454231_initial.resx">
+      <DependentUpon>201904261454231_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

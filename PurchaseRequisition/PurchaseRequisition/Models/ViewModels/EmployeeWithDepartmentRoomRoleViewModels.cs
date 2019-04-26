@@ -1,4 +1,5 @@
-﻿using PurchaseRequisition.Models.Base;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using PurchaseRequisition.Models.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,11 +11,12 @@ namespace PurchaseRequisition.Models.ViewModels
 {
     public class EmployeeWithDepartmentRoomRoleViewModels : EntityBase
     {
+
         [DataType(DataType.Text)]
         [Display(Name = "Employee Name")]
         public string EmployeeName { get; set; }
 
-        [DataType(DataType.EmailAddress)]
+        [EmailAddress]
         public string Email { get; set; }
 
         [DefaultValue(true)]
