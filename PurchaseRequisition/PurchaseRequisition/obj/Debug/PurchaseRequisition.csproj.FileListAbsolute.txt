@@ -1219,6 +1219,6 @@ C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRe
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\bin\PagedList.Mvc.dll
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\bin\PagedList.xml
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\bin\PagedList.Mvc.xml
-C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.Migrations.initial.resources
-C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csproj.GenerateResource.cache
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csprojAssemblyReference.cache
+C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.Migrations.Initial.resources
+C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csproj.GenerateResource.cache

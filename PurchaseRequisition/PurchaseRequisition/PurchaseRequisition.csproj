@@ -367,9 +367,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Initializer\DB.cs" />
-    <Compile Include="Migrations\201904261454231_initial.cs" />
-    <Compile Include="Migrations\201904261454231_initial.Designer.cs">
-      <DependentUpon>201904261454231_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201904261755037_Initial.cs" />
+    <Compile Include="Migrations\201904261755037_Initial.Designer.cs">
+      <DependentUpon>201904261755037_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Base\EntityBase.cs" />
@@ -550,7 +550,6 @@
     <Content Include="Views\Admin\EmployeeWithDepartmentRoomRole.cshtml" />
     <Content Include="Views\Rooms\RoomWithCampus.cshtml" />
     <Content Include="Views\Vendors\VendorWithAddress.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Requests\RequestWithVendor.cshtml" />
     <Content Include="Views\Supervisor\SupervisorApprovalWithApproval.cshtml" />
     <Content Include="Views\SupervisorApprovals\Create.cshtml" />
@@ -581,8 +580,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904261454231_initial.resx">
-      <DependentUpon>201904261454231_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904261755037_Initial.resx">
+      <DependentUpon>201904261755037_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

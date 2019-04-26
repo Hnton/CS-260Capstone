@@ -52,7 +52,7 @@ namespace PurchaseRequisition.Controllers
             {
                 db.Items.Add(item);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "Requests");
             }
 
             return View(item);

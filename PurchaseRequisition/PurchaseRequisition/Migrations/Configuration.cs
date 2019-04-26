@@ -35,6 +35,31 @@ namespace PurchaseRequisition.Migrations
                 new IdentityRole { Name = "User" }
                 );
 
+            context.Statuses.AddOrUpdate(s => s.ID,
+                new Status { StatusName = "Approved", TimeStamp = DateTime.Now },
+                new Status { StatusName = "Pending", TimeStamp = DateTime.Now },
+                new Status { StatusName = "Denied", TimeStamp = DateTime.Now }
+                );
+
+            context.Categories.AddOrUpdate(c => c.ID,
+                new Category { CategoryName = "Books and Periodicals", TimeStamp = DateTime.Now },
+                new Category { CategoryName = "Computer Supplies", TimeStamp = DateTime.Now },
+                new Category { CategoryName = "Computer Software - Less than $5,000", TimeStamp = DateTime.Now },
+                new Category { CategoryName = "Student Activities", TimeStamp = DateTime.Now },
+                new Category { CategoryName = "Office Expenses", TimeStamp = DateTime.Now }, 
+                new Category { CategoryName = "Other General Expenses", TimeStamp = DateTime.Now },
+                new Category { CategoryName = "Postage and Freight", TimeStamp = DateTime.Now },
+                new Category { CategoryName = "Printing and Binding", TimeStamp = DateTime.Now },
+                new Category { CategoryName = "Rent of Machines and Operating Leases", TimeStamp = DateTime.Now },
+                new Category { CategoryName = "Research and Educational Supplies", TimeStamp = DateTime.Now },
+                new Category { CategoryName = "Training and Development of Employees", TimeStamp = DateTime.Now },
+                new Category { CategoryName = "Travel - Within US", TimeStamp = DateTime.Now },
+                new Category { CategoryName = "Vehicle Rental - Within US", TimeStamp = DateTime.Now },
+                new Category { CategoryName = "Contractual and Professional Services", TimeStamp = DateTime.Now }
+
+                );
+                
+
             //ADDING ADDRESSES
             context.Addresses.AddOrUpdate(a => a.ID,
                 new Address

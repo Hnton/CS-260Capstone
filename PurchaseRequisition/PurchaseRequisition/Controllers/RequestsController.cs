@@ -135,7 +135,7 @@ namespace PurchaseRequisition.Controllers
             {
                 db.Requests.Add(request);
                 request.EstimatedTotal = request.EstimatedCost * request.QuantityRequested;
-                request.PaidTotal = request.PaidCost * request.QuantityRequested;
+               
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -174,6 +174,7 @@ namespace PurchaseRequisition.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(request).State = EntityState.Modified;
+                request.PaidTotal = request.PaidCost * request.QuantityRequested;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

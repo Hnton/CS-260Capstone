@@ -57,12 +57,12 @@ namespace PurchaseRequisition.Controllers
             {
                 db.Orders.Add(order);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "Items");
             }
 
             ViewBag.BudgetCodeID = new SelectList(db.BudgetCodes, "ID", "BudgetCodeName", order.BudgetCodeID);
             ViewBag.CategoryID = new SelectList(db.Categories, "ID", "CategoryName", order.CategoryID);
-            ViewBag.EmployeeID = new SelectList(db.Users, "Id", "Email", order.EmployeeID);
+            //ViewBag.EmployeeID = new SelectList(db.Users, "Id", "Email", order.EmployeeID);
             ViewBag.StatusID = new SelectList(db.Statuses, "ID", "StatusName", order.StatusID);
             return View(order);
         }
