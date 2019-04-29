@@ -19,5 +19,7 @@ namespace PurchaseRequisition.Models.ViewModels
 
         [Display(Name = "Supervisor")]
         public string SupervisorName { get; set; }
+
+        public int SupervisorID { get; set; }
     }
 }

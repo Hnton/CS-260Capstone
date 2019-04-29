@@ -18,13 +18,9 @@ namespace PurchaseRequisition.Controllers
         // GET: Vendors
         public ActionResult Index()
         {
-            var vendors = db.Vendors.Include(v => v.Address);
-            return View(vendors.ToList());
-        }
+            //var vendors = db.Vendors.Include(v => v.Address);
+            //return View(vendors.ToList());
 
-        // Display Vendor with Address
-        public ActionResult VendorWithAddress()
-        {
             var list = (from v in db.Vendors
                         join a in db.Addresses
                         on v.AddressID equals a.ID into ThisList
@@ -55,8 +51,35 @@ namespace PurchaseRequisition.Controllers
                         });
 
             return View(list);
-
         }
+
+        // GET: Vendors/Create
+        public ActionResult CreateVendorWithAddress()
+        {
+            ViewBag.AddressID = new SelectList(db.Addresses, "ID", "City");
+            return View();
+        }
+
+        // POST: Vendors/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateVendorWithAddress(Vendor vendor, Address address)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Addresses.Add(address);
+                db.Vendors.Add(vendor);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.AddressID = new SelectList(db.Addresses, "ID", "City", vendor.AddressID);
+            return View(vendor);
+        }
+
+
 
         // GET: Vendors/Details/5
         public ActionResult Details(int? id)

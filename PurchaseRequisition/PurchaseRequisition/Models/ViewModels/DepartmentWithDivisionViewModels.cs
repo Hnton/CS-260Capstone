@@ -19,5 +19,7 @@ namespace PurchaseRequisition.Models.ViewModels
 
         [Display(Name = "Division")]
         public string DivisionName { get; set; }
+
+        public int DivisionID { get; set; }
     }
 }

@@ -6,6 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using PurchaseRequisition.Models;
 using PurchaseRequisition.Models.ViewModels;
 
@@ -18,13 +20,9 @@ namespace PurchaseRequisition.Controllers
         // GET: Divisions
         public ActionResult Index()
         {
-            var divisions = db.Divisions.Include(d => d.Supervisor);
-            return View(divisions.ToList());
-        }
+            //var divisions = db.Divisions.Include(d => d.Supervisor);
+            //return View(divisions.ToList());
 
-        // Display Divisions with Supervisor
-        public ActionResult DivisionsWithSupervisor()
-        {
             var list = (from d in db.Divisions
                         join e in db.Employees
                         on d.SupervisorID equals e.Id into ThisList
@@ -45,7 +43,36 @@ namespace PurchaseRequisition.Controllers
                         });
 
             return View(list);
+        }
 
+        // GET: Divisions/Create
+        public ActionResult CreateDivisionWithSupervisor()
+        {
+            var roleManager = new Microsoft.AspNet.Identity.RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext()));
+
+            string Supervisor = roleManager.FindByName("Supervisor").Id;
+            ViewBag.SupervisorID = new SelectList(db.Users.Where(u => u.Roles.Any(r => r.RoleId == Supervisor)).ToList(), "ID", "Email");
+            return View();
+        }
+
+        // POST: Divisions/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateDivisionWithSupervisor(Division division)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Divisions.Add(division);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            var roleManager = new Microsoft.AspNet.Identity.RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext()));
+
+            string Supervisor = roleManager.FindByName("Supervisor").Id;
+            ViewBag.SupervisorID = new SelectList(db.Users.Where(u => u.Roles.Any(r => r.RoleId == Supervisor)).ToList(), "ID", "Email");
+            return View(division);
         }
 
         // GET: Divisions/Details/5

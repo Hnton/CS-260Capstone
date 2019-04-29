@@ -18,13 +18,9 @@ namespace PurchaseRequisition.Controllers
         // GET: Departments
         public ActionResult Index()
         {
-            var departments = db.Departments.Include(d => d.Division);
-            return View(departments.ToList());
-        }
+            //var departments = db.Departments.Include(d => d.Division);
+            //return View(departments.ToList());
 
-        // Display BudgetCodes with Amount
-        public ActionResult DepartmentsWithDivision()
-        {
             var list = (from d in db.Departments
                         join div in db.Divisions
                         on d.ID equals div.ID into ThisList
@@ -40,12 +36,63 @@ namespace PurchaseRequisition.Controllers
                         .Select(x => new DepartmentWithDivisionViewModels()
                         {
                             DepartmentName = x.DepartmentName,
-                            Active = x.Active,                           
+                            Active = x.Active,
                             DivisionName = x.DivisionName
                         });
 
             return View(list);
+        }
 
+        //// Display BudgetCodes with Amount
+        //public ActionResult DepartmentsWithDivision()
+        //{
+        //    var list = (from d in db.Departments
+        //                join div in db.Divisions
+        //                on d.ID equals div.ID into ThisList
+        //                from div in ThisList.DefaultIfEmpty()
+        //                select new
+        //                {
+        //                    DepartmentName = d.DepartmentName,
+        //                    Active = d.Active,
+        //                    DivisionName = div.DivisionName
+
+
+        //                }).ToList()
+        //                .Select(x => new DepartmentWithDivisionViewModels()
+        //                {
+        //                    DepartmentName = x.DepartmentName,
+        //                    Active = x.Active,                           
+        //                    DivisionName = x.DivisionName
+        //                });
+
+        //    return View(list);
+
+        //}
+
+        // GET: Departments/Create
+        public ActionResult CreateDepartmentWithDivision()
+        {
+            ViewBag.DivisionID = new SelectList(db.Divisions, "ID", "DivisionName");
+            return View();
+        }
+
+        // POST: Departments/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateDepartmentWithDivision(Department department, Division division)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Divisions.Add(division);
+                db.Departments.Add(department);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.DivisionID = new SelectList(db.Divisions, "ID", "DivisionName", department.DivisionID);
+            return View(department);
         }
 
         // GET: Departments/Details/5

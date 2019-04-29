@@ -11,6 +11,7 @@ using PurchaseRequisition.Models.ViewModels;
 
 namespace PurchaseRequisition.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class RoomsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -18,37 +19,87 @@ namespace PurchaseRequisition.Controllers
         // GET: Rooms
         public ActionResult Index()
         {
-            var rooms = db.Rooms.Include(r => r.Campus);
-            return View(rooms.ToList());
-        }
+            //var rooms = db.Rooms.Include(r => r.Campus);
+            //return View(rooms.ToList());
 
-        // Display Divisions with Supervisor
-        public ActionResult RoomWithCampus()
-        {
             var list = (from r in db.Rooms
                         join c in db.Campuses
                         on r.CampusID equals c.ID into ThisList
                         from c in ThisList.DefaultIfEmpty()
                         select new
                         {
-                           RoomCode = r.RoomCode,
-                           RoomName = r.RoomName,
-                           Active = r.Active,
-                           CampusName = c.CampusName,
+                            RoomCode = r.RoomCode,
+                            RoomName = r.RoomName,
+                            Active = r.Active,
+                            CampusName = c.CampusName,
 
 
                         }).ToList()
-                        .Select(x => new RoomWithCampusViewModels()
-                        {
-                            RoomCode = x.RoomCode,
-                            RoomName = x.RoomName,
-                            Active = x.Active,
-                            CampusName = x.CampusName,
-                        });
+                       .Select(x => new RoomWithCampusViewModels()
+                       {
+                           RoomCode = x.RoomCode,
+                           RoomName = x.RoomName,
+                           Active = x.Active,
+                           CampusName = x.CampusName,
+                       });
 
             return View(list);
-
         }
+
+        // GET: Rooms/Create
+        public ActionResult CreateRoomAndCampus()
+        {
+            ViewBag.CampusID = new SelectList(db.Campuses, "ID", "CampusName");
+            return View();
+        }
+
+        // POST: Rooms/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateRoomAndCampus(Room room, Campus campus)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Campuses.Add(campus);
+                db.Rooms.Add(room);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.CampusID = new SelectList(db.Campuses, "ID", "CampusName", room.CampusID);
+            return View(room);
+        }
+
+
+        //// Display Divisions with Supervisor
+        //public ActionResult RoomWithCampus()
+        //{
+        //    var list = (from r in db.Rooms
+        //                join c in db.Campuses
+        //                on r.CampusID equals c.ID into ThisList
+        //                from c in ThisList.DefaultIfEmpty()
+        //                select new
+        //                {
+        //                   RoomCode = r.RoomCode,
+        //                   RoomName = r.RoomName,
+        //                   Active = r.Active,
+        //                   CampusName = c.CampusName,
+
+
+        //                }).ToList()
+        //                .Select(x => new RoomWithCampusViewModels()
+        //                {
+        //                    RoomCode = x.RoomCode,
+        //                    RoomName = x.RoomName,
+        //                    Active = x.Active,
+        //                    CampusName = x.CampusName,
+        //                });
+
+        //    return View(list);
+
+        //}
 
         // GET: Rooms/Details/5
         public ActionResult Details(int? id)

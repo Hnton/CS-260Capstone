@@ -22,5 +22,7 @@ namespace PurchaseRequisition.Models.ViewModels
         public bool Active { get; set; }
 
         public string CampusName { get; set; }
+
+        public int CampusID { get; set; }
     }
 }

@@ -540,15 +540,11 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Departments\DepartmentsWithDivision.cshtml" />
-    <Content Include="Views\Divisions\DivisionsWithSupervisor.cshtml" />
     <Content Include="Views\EmployeesBudgetCodes\Create.cshtml" />
     <Content Include="Views\EmployeesBudgetCodes\Delete.cshtml" />
     <Content Include="Views\EmployeesBudgetCodes\Details.cshtml" />
     <Content Include="Views\EmployeesBudgetCodes\Edit.cshtml" />
     <Content Include="Views\EmployeesBudgetCodes\Index.cshtml" />
-    <Content Include="Views\Rooms\RoomWithCampus.cshtml" />
-    <Content Include="Views\Vendors\VendorWithAddress.cshtml" />
     <Content Include="Views\Requests\RequestWithVendor.cshtml" />
     <Content Include="Views\SupervisorApprovals\Create.cshtml" />
     <Content Include="Views\SupervisorApprovals\Delete.cshtml" />
@@ -571,6 +567,10 @@
     <Content Include="Views\Purchase\Create.cshtml" />
     <Content Include="Views\Purchase\CreateWithVendor.cshtml" />
     <Content Include="Views\Purchase\Pending.cshtml" />
+    <Content Include="Views\Rooms\CreateRoomAndCampus.cshtml" />
+    <Content Include="Views\Departments\CreateDepartmentWithDivision.cshtml" />
+    <Content Include="Views\Divisions\CreateDivisionWithSupervisor.cshtml" />
+    <Content Include="Views\Vendors\CreateVendorWithAddress.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

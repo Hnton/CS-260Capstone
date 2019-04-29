@@ -1,18 +1,18 @@
-﻿@model IEnumerable<PurchaseRequisition.Models.Division>
+﻿@model IEnumerable<PurchaseRequisition.Models.ViewModels.DivisionWithSupervisorViewModels>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "DivisionsWithSupervisor";
 }
 
-<h2>Index</h2>
+<h2>DivisionsWithSupervisor</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "CreateDivisionWithSupervisor")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Supervisor.Email)
+            @Html.DisplayNameFor(model => model.TimeStamp)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DivisionName)
@@ -21,31 +21,27 @@
             @Html.DisplayNameFor(model => model.Active)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TimeStamp)
+            @Html.DisplayNameFor(model => model.SupervisorName)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Supervisor.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DivisionName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Active)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TimeStamp)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeStamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DivisionName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupervisorName)
+            </td>
+        </tr>
+    }
 
 </table>
