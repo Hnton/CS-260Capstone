@@ -347,6 +347,8 @@
     <Compile Include="Controllers\ApprovalsController.cs" />
     <Compile Include="Controllers\BudgetAmountsController.cs" />
     <Compile Include="Controllers\BudgetCodesController.cs" />
+    <Compile Include="Controllers\BudgetsController.cs" />
+    <Compile Include="Controllers\CampusAndAddressController.cs" />
     <Compile Include="Controllers\CampusController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
@@ -356,6 +358,7 @@
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\PurchaseController.cs" />
     <Compile Include="Controllers\RequestsController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
@@ -367,9 +370,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Initializer\DB.cs" />
-    <Compile Include="Migrations\201904261755037_Initial.cs" />
-    <Compile Include="Migrations\201904261755037_Initial.Designer.cs">
-      <DependentUpon>201904261755037_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201904290418238_initial.cs" />
+    <Compile Include="Migrations\201904290418238_initial.Designer.cs">
+      <DependentUpon>201904290418238_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Base\EntityBase.cs" />
@@ -470,7 +473,6 @@
     <Content Include="Views\Campus\Delete.cshtml" />
     <Content Include="Views\Campus\Details.cshtml" />
     <Content Include="Views\Campus\Edit.cshtml" />
-    <Content Include="Views\Campus\Index.cshtml" />
     <Content Include="Views\Addresses\Create.cshtml" />
     <Content Include="Views\Addresses\Delete.cshtml" />
     <Content Include="Views\Addresses\Details.cshtml" />
@@ -538,8 +540,6 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Campus\CampusWithAddress.cshtml" />
-    <Content Include="Views\BudgetCodes\BudgetCodesWithAmount.cshtml" />
     <Content Include="Views\Departments\DepartmentsWithDivision.cshtml" />
     <Content Include="Views\Divisions\DivisionsWithSupervisor.cshtml" />
     <Content Include="Views\EmployeesBudgetCodes\Create.cshtml" />
@@ -547,11 +547,9 @@
     <Content Include="Views\EmployeesBudgetCodes\Details.cshtml" />
     <Content Include="Views\EmployeesBudgetCodes\Edit.cshtml" />
     <Content Include="Views\EmployeesBudgetCodes\Index.cshtml" />
-    <Content Include="Views\Admin\EmployeeWithDepartmentRoomRole.cshtml" />
     <Content Include="Views\Rooms\RoomWithCampus.cshtml" />
     <Content Include="Views\Vendors\VendorWithAddress.cshtml" />
     <Content Include="Views\Requests\RequestWithVendor.cshtml" />
-    <Content Include="Views\Supervisor\SupervisorApprovalWithApproval.cshtml" />
     <Content Include="Views\SupervisorApprovals\Create.cshtml" />
     <Content Include="Views\SupervisorApprovals\Delete.cshtml" />
     <Content Include="Views\SupervisorApprovals\Details.cshtml" />
@@ -562,6 +560,15 @@
     <Content Include="Views\Admin\DeleteUsers.cshtml" />
     <Content Include="Views\Admin\EditUsers.cshtml" />
     <Content Include="Views\Admin\ListRoles.cshtml" />
+    <Content Include="Views\Budgets\CreateBudgetAndAmount.cshtml" />
+    <Content Include="Views\Budgets\Index.cshtml" />
+    <Content Include="Views\CampusAndAddress\Index.cshtml" />
+    <Content Include="Views\CampusAndAddress\CreateCampusAndAddress.cshtml" />
+    <Content Include="Views\Campus\Index.cshtml" />
+    <Content Include="Views\Supervisor\Index.cshtml" />
+    <Content Include="Views\Supervisor\Create.cshtml" />
+    <Content Include="Views\Purchase\Index.cshtml" />
+    <Content Include="Views\Purchase\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -580,8 +587,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904261755037_Initial.resx">
-      <DependentUpon>201904261755037_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904290418238_initial.resx">
+      <DependentUpon>201904290418238_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

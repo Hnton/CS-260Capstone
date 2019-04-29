@@ -13,18 +13,33 @@ namespace PurchaseRequisition.Models.ViewModels
         [Display(Name = "Requester")]
         public string EmployeeName { get; set; }
 
+        [Required]
+        public string EmployeeID { get; set; }
+
 
         [Display(Name = "Supervisor")]
         public string SupervisorName { get; set; }
 
+        [Required]
+        public string SupervisorID { get; set; }
+
         [Display(Name = "Status")]
         public string StatusName { get; set; }
+
+        [Required]
+        public int StatusID { get; set; }
 
         [Display(Name = "Category")]
         public string CategoryName { get; set; }
 
+        [Required]
+        public int CategoryID { get; set; }
+
         [Display(Name = "Budget")]
         public string BudgetCodeName { get; set; }
+
+        [Required]
+        public int BudgetCodeID { get; set; }
 
         [DataType(DataType.Date)]
         [Display(Name = "Created")]

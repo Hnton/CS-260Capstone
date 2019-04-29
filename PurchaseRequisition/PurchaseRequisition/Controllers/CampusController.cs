@@ -11,6 +11,7 @@ using PurchaseRequisition.Models.ViewModels;
 
 namespace PurchaseRequisition.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CampusController : Controller
     {
         
@@ -22,39 +23,6 @@ namespace PurchaseRequisition.Controllers
             var campuses = db.Campuses.Include(c => c.Address);
             return View(campuses.ToList());
         }
-
-        // Display Campuses with Address
-        public ActionResult CampusWithAddress()
-        {
-            var list = (from c in db.Campuses
-                        join a in db.Addresses
-                        on c.ID equals a.ID into ThisList
-                        from a in ThisList.DefaultIfEmpty()
-                        select new
-                        {
-                            CampusName = c.CampusName,
-                            Active = c.Active,
-                            City = a.City,
-                            State = a.State,
-                            StreetAddress = a.StreetAddress,
-                            ZIP = a.ZIP
-
-                        }).ToList()
-                        .Select(x => new CampusWithAddressViewModels()
-                        {
-                            CampusName = x.CampusName,
-                            Active = x.Active,
-                            City = x.City,
-                            State = x.State,
-                            StreetAddress = x.StreetAddress,
-                            ZIP = x.ZIP
-                        });
-
-            return View(list);
-                        
-        }
-
-
 
         // GET: CampusWithAddress
         public ActionResult DetailsCampusWithAddress(int? id)

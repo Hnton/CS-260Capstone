@@ -1,24 +1,19 @@
-﻿using System;
-using System.Globalization;
+﻿using PurchaseRequisition.Models;
+using PurchaseRequisition.Models.ViewModels;
+using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using PurchaseRequisition.Models;
-using PurchaseRequisition.Models.ViewModels;
 
 namespace PurchaseRequisition.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class SupervisorController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
-        // Display SupervisorApproval with Approval
-        public ActionResult SupervisorApprovalWithApproval()
+        // GET: Supervisor
+        public ActionResult Index()
         {
             var list = (from a in db.SupervisorApprovals
                         join e in db.Employees
@@ -39,7 +34,37 @@ namespace PurchaseRequisition.Controllers
                         });
 
             return View(list);
-
         }
+
+        // GET: SupervisorApprovals/Create
+        public ActionResult Create()
+        {
+            ViewBag.ApprovalID = new SelectList(db.Approval, "ID", "ApprovalName");
+            ViewBag.SupervisorID = new SelectList(db.Users, "Id", "Email");
+            ViewBag.OrderID = new SelectList(db.Orders, "ID", "BusinessJustification");
+            return View();
+        }
+
+        // POST: SupervisorApprovals/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(SupervisorApproval supervisorApproval, Approval approval)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Approval.Add(approval);
+                db.SupervisorApprovals.Add(supervisorApproval);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.ApprovalID = new SelectList(db.Approval, "ID", "ApprovalName", supervisorApproval.ApprovalID);
+            ViewBag.SupervisorID = new SelectList(db.Users, "Id", "Email", supervisorApproval.SupervisorID);
+            ViewBag.OrderID = new SelectList(db.Orders, "ID", "BusinessJustification", supervisorApproval.OrderID);
+            return View(supervisorApproval);
+        }
+
     }
 }

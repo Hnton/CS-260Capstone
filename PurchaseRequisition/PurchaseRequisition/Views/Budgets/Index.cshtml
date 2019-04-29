@@ -1,0 +1,66 @@
+﻿@model IEnumerable<PurchaseRequisition.Models.ViewModels.BudgetCodeWithAmountViewModels>
+
+@{
+    ViewBag.Title = "BudgetCodesWithAmount";
+}
+
+<h2>BudgetCodesWithAmount</h2>
+
+<p>
+    @Html.ActionLink("Create New Budget", "CreateBudgetAndAmount")
+    <br />
+    @Html.ActionLink("Edit Name, Code, Annual & Active", "Index", "BudgetCodes")
+    <br />
+    @Html.ActionLink("Edit Amount", "Index", "BudgetAmounts")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DA_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BudgetCodeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalAmount)
+        </th>
+        <td>
+
+        </td>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeStamp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DA_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BudgetCodeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Active)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalAmount)
+        </td>
+    </tr>
+    }
+
+</table>

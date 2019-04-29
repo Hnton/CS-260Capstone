@@ -22,35 +22,60 @@ namespace PurchaseRequisition.Controllers
             return View(db.BudgetCodes.ToList());
         }
 
-        // Display BudgetCodes with Amount
-        public ActionResult BudgetCodesWithAmount()
-        {
-            var list = (from c in db.BudgetCodes
-                        join a in db.BudgetAmounts
-                        on c.ID equals a.ID into ThisList
-                        from a in ThisList.DefaultIfEmpty()
-                        select new
-                        {
-                            DA_CODE = c.DA_CODE,
-                            BudgetCodeName = c.BudgetCodeName,
-                            Type = c.Type,
-                            Active = c.Active,
-                            TotalAmount = a.TotalAmount
+        //// Display BudgetCodes with Amount
+        //public ActionResult BudgetCodesWithAmount()
+        //{
+        //    var list = (from c in db.BudgetCodes
+        //                join a in db.BudgetAmounts
+        //                on c.ID equals a.ID into ThisList
+        //                from a in ThisList.DefaultIfEmpty()
+        //                select new
+        //                {
+        //                    DA_CODE = c.DA_CODE,
+        //                    BudgetCodeName = c.BudgetCodeName,
+        //                    Type = c.Type,
+        //                    Active = c.Active,
+        //                    TotalAmount = a.TotalAmount
                            
 
-                        }).ToList()
-                        .Select(x => new BudgetCodeWithAmountViewModels()
-                        {
-                            DA_CODE = x.DA_CODE,
-                            BudgetCodeName = x.BudgetCodeName,
-                            Type = x.Type,
-                            Active = x.Active,
-                            TotalAmount = x.TotalAmount
-                        });
+        //                }).ToList()
+        //                .Select(x => new BudgetCodeWithAmountViewModels()
+        //                {
+        //                    DA_CODE = x.DA_CODE,
+        //                    BudgetCodeName = x.BudgetCodeName,
+        //                    Type = x.Type,
+        //                    Active = x.Active,
+        //                    TotalAmount = x.TotalAmount
+        //                });
 
-            return View(list);
+        //    return View(list);
+        //}
 
+        // GET: BudgetCodes/Create
+        public ActionResult CreateBudgetAndAmount()
+        {
+            return View();
         }
+
+        // POST: BudgetCodes/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateBudgetAndAmount(BudgetCode budgetCode, BudgetAmount budgetAmount)
+        {
+            if (ModelState.IsValid)
+            {
+                db.BudgetAmounts.Add(budgetAmount);
+                db.BudgetCodes.Add(budgetCode);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(budgetCode);
+        }
+
+
 
         // GET: BudgetCodes/Details/5
         public ActionResult Details(int? id)
