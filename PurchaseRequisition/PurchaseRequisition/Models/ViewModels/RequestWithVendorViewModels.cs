@@ -40,6 +40,9 @@ namespace PurchaseRequisition.Models.ViewModels
         [Display(Name = "Item Name")]
         public string ItemName { get; set; }
 
+        public int ItemID { get; set; }
+
+
         [DataType(DataType.Text), MaxLength(200)]
         public string Description { get; set; }
 
@@ -48,5 +51,8 @@ namespace PurchaseRequisition.Models.ViewModels
 
         [Display(Name = "Vendor")]
         public string VendorName { get; set; }
+
+        public int VendorID { get; set; }
+
     }
 }

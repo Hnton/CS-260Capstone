@@ -89,7 +89,7 @@ namespace PurchaseRequisition.Controllers
                            PaidTotal = x.PaidTotal,
                            Chosen = x.Chosen,
                            orderID = x.orderID,
-                           Attachments = x.Attachments,
+                           //Attachments = x.Attachments,
                            ItemName = x.ItemName,
                            Description = x.Description,
                            ReasonChosen = x.ReasonChosen,
