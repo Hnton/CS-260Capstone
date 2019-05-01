@@ -102,8 +102,10 @@ namespace PurchaseRequisition.Controllers
         // GET: Requests/Create
         public ActionResult CreateWithVendor()
         {
+            //var last = db.Orders.OrderByDescending(p => p.DateMade).FirstOrDefault();
             ViewBag.ItemID = new SelectList(db.Items, "ID", "ItemName");
-            ViewBag.OrderID = new SelectList(db.Orders, "ID", "BusinessJustification");
+            //ViewBag.OrderID = new SelectList(last.BusinessJustification.ToString(), "ID", "BusinessJustification");
+            //ViewBag.OrderID = new SelectList(db.Orders.LastOrDefault().ToString(), "ID","BusinessJustification");
             ViewBag.VendorID = new SelectList(db.Vendors, "ID", "VendorName");
             return View();
         }
@@ -118,23 +120,29 @@ namespace PurchaseRequisition.Controllers
             
                 if (ModelState.IsValid)
                 {
+                var test = db.Orders.OrderByDescending(t => t.ID).First();
+
+                request.OrderID = test.ID;
 
 
                     db.Items.Add(item);
                     db.Requests.Add(request);
                     request.EstimatedTotal = request.EstimatedCost * request.QuantityRequested;
                     request.PaidTotal = request.PaidCost * request.QuantityRequested;
+                    
 
 
                     db.SaveChanges();
 
                     return RedirectToAction("Pending");
                 }
-            
 
-            ViewBag.ItemID = new SelectList(db.Items, "ID", "ItemName", request.ItemID);
-            ViewBag.OrderID = new SelectList(db.Orders, "ID", "BusinessJustification", request.OrderID);
-            ViewBag.VendorID = new SelectList(db.Vendors, "ID", "VendorName", request.VendorID);
+
+            //var last = db.Orders.OrderByDescending(p => p.DateMade).FirstOrDefault();
+            ViewBag.ItemID = new SelectList(db.Items, "ID", "ItemName");
+            //ViewBag.OrderID = new SelectList(last.BusinessJustification.ToString(), "ID", "BusinessJustification");
+            //ViewBag.OrderID = new SelectList(db.Orders.LastOrDefault().ToString(), "ID","BusinessJustification");
+            ViewBag.VendorID = new SelectList(db.Vendors, "ID", "VendorName");
             return View(item);
         }
 
@@ -145,13 +153,13 @@ namespace PurchaseRequisition.Controllers
 
             string Supervisor = roleManager.FindByName("Supervisor").Id;
 
-            ViewBag.EmployeeID = new SelectList(db.Users, "Id", "Email");
+            ViewBag.EmployeeID = new SelectList(db.Users.Where(i => i.Email.Equals(HttpContext.User.Identity.Name.ToString())), "ID", "Email");
             ViewBag.SupervisorID = new SelectList(db.Users.Where(u => u.Roles.Any(r => r.RoleId == Supervisor)).ToList(), "ID", "Email");
+
+
             ViewBag.BudgetCodeID = new SelectList(db.BudgetCodes, "Id", "BudgetCodeName");
-            ViewBag.StatusID = new SelectList(db.Statuses, "Id", "StatusName");
+            ViewBag.StatusID = new SelectList(db.Statuses.Where(s => s.StatusName == "Pending"), "Id", "StatusName");
             ViewBag.CategoryID = new SelectList(db.Categories, "Id", "CategoryName");
-
-
 
 
             return View();
@@ -162,15 +170,19 @@ namespace PurchaseRequisition.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Order order, Item item, Request request)
+        public ActionResult Create(Order order, Item item,Request request)
         {
             if (ModelState.IsValid)
             {
+                order.DateMade = DateTime.Now;
+
                 db.Orders.Add(order);
                 db.Items.Add(item);
                 db.Requests.Add(request);
-                request.EstimatedTotal = request.EstimatedCost * request.QuantityRequested;
+                
 
+                db.SaveChanges();
+                db.Items.Remove(item);
                 db.SaveChanges();
                 return RedirectToAction("CreateWithVendor");
             }
@@ -179,9 +191,9 @@ namespace PurchaseRequisition.Controllers
 
             string Supervisor = roleManager.FindByName("Supervisor").Id;
 
-            ViewBag.StatusID = new SelectList(db.Statuses, "Id", "StatusName");
+            ViewBag.StatusID = new SelectList(db.Statuses.Where(s => s.StatusName == "Pending"), "Id", "StatusName");
             ViewBag.BudgetCodeID = new SelectList(db.BudgetCodes, "Id", "BudgetCodeName");
-            ViewBag.EmployeeID = new SelectList(db.Users, "Id", "Email");
+            ViewBag.EmployeeID = new SelectList(db.Users.Where(i => i.Email.Equals(HttpContext.User.Identity.Name.ToString())), "ID", "Email");
             ViewBag.SupervisorID = new SelectList(db.Users.Where(u => u.Roles.Any(r => r.RoleId == Supervisor)).ToList(), "ID", "Email");
             return View(request);
         }
