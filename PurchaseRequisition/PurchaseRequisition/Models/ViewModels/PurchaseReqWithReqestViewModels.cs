@@ -14,7 +14,7 @@ namespace PurchaseRequisition.Models.ViewModels
         public string EmployeeName { get; set; }
 
         [Required]
-        public String EmployeeID { get; set; }
+        public string EmployeeID { get; set; }
 
 
         [Display(Name = "Supervisor")]
