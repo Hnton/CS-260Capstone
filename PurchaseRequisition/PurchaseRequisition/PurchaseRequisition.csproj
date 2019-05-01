@@ -370,9 +370,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Initializer\DB.cs" />
-    <Compile Include="Migrations\201904290418238_initial.cs" />
-    <Compile Include="Migrations\201904290418238_initial.Designer.cs">
-      <DependentUpon>201904290418238_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201904291533343_Initial.cs" />
+    <Compile Include="Migrations\201904291533343_Initial.Designer.cs">
+      <DependentUpon>201904291533343_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Base\EntityBase.cs" />
@@ -418,9 +418,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\background.jpg" />
-    <Content Include="Content\Images\Rect_logo.png" />
-    <Content Include="Content\Images\round_logo.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -592,8 +589,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904290418238_initial.resx">
-      <DependentUpon>201904290418238_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904291533343_Initial.resx">
+      <DependentUpon>201904291533343_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
