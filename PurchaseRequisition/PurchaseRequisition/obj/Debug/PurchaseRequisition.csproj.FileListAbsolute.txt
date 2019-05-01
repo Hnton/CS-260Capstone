@@ -904,7 +904,6 @@ C:\Users\belch\OneDrive\Documents\GitHub\CS-260Capstone\PurchaseRequisition\Purc
 C:\Users\belch\OneDrive\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\belch\OneDrive\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csprojAssemblyReference.cache
 C:\Users\belch\OneDrive\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.Migrations.Initial.resources
-C:\Users\belch\OneDrive\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.Migrations.supervisor4172019.resources
 C:\Users\belch\OneDrive\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csproj.GenerateResource.cache
 C:\Users\belch\OneDrive\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csproj.CoreCompileInputs.cache
 C:\Users\belch\OneDrive\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csproj.CopyComplete
@@ -1219,10 +1218,14 @@ C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRe
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.Migrations.initial.resources
+C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csproj.GenerateResource.cache
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csproj.CoreCompileInputs.cache
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csproj.CopyComplete
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.dll
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.pdb
 C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csprojAssemblyReference.cache
-C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.Migrations.Initial.resources
-C:\Users\mhinton4\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csproj.GenerateResource.cache
+C:\Users\belch\OneDrive\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\bin\PagedList.dll
+C:\Users\belch\OneDrive\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\bin\PagedList.Mvc.dll
+C:\Users\belch\OneDrive\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\bin\PagedList.xml
+C:\Users\belch\OneDrive\Documents\GitHub\CS-260Capstone\PurchaseRequisition\PurchaseRequisition\bin\PagedList.Mvc.xml

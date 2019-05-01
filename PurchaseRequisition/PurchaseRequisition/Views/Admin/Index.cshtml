@@ -1,41 +1,47 @@
-﻿
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+</head>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Admin</h2>
+<div id="text-container">
 
-<br />
 
-<h4>User</h4>
-<li>@Html.ActionLink("Add User", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-<li>@Html.ActionLink("List Users With Department", "EmployeeWithDepartmentRoomRole", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-<li>@Html.ActionLink("List All Users", "ListUsers", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <h2>Admin</h2>
 
-<h4>Roles</h4>
-<li>@Html.ActionLink("List Roles", "ListRoles", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <br />
 
-<h4>Divisions</h4>
-<li>@Html.ActionLink("Add & Edit Divisions", "Index", "Divisions", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <h4>User</h4>
+    <li>@Html.ActionLink("Add User", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <li>@Html.ActionLink("List Users With Department", "EmployeeWithDepartmentRoomRole", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <li>@Html.ActionLink("List All Users", "ListUsers", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
-<h4>Departments</h4>
-<li>@Html.ActionLink("Add & Edit Departments", "Index", "Departments", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <h4>Roles</h4>
+    <li>@Html.ActionLink("List Roles", "ListRoles", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
-<h4>Categories</h4>
-<li>@Html.ActionLink("Add & Edit Categories", "Index", "Categories", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <h4>Divisions</h4>
+    <li>@Html.ActionLink("Add & Edit Divisions", "Index", "Divisions", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
-<h4>Campuses</h4>
-<li>@Html.ActionLink("Add & Edit Campuses", "Index", "Campus", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <h4>Departments</h4>
+    <li>@Html.ActionLink("Add & Edit Departments", "Index", "Departments", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
-<h4>Addresses</h4>
-<li>@Html.ActionLink("Add & Edit Vendors", "Index", "Addresses", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <h4>Categories</h4>
+    <li>@Html.ActionLink("Add & Edit Categories", "Index", "Categories", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
-<h4>Vendors</h4>
-<li>@Html.ActionLink("Add & Edit Vendors", "Index", "Vendors", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <h4>Campuses</h4>
+    <li>@Html.ActionLink("Add & Edit Campuses", "Index", "Campus", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
-<h4>Rooms</h4>
-<li>@Html.ActionLink("Add & Edit Rooms", "Index", "Rooms", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <h4>Addresses</h4>
+    <li>@Html.ActionLink("Add & Edit Vendors", "Index", "Addresses", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
-<h4>Statuses</h4>
-<li>@Html.ActionLink("Add & Edit Statuses", "Index", "Status", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <h4>Vendors</h4>
+    <li>@Html.ActionLink("Add & Edit Vendors", "Index", "Vendors", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
+    <h4>Rooms</h4>
+    <li>@Html.ActionLink("Add & Edit Rooms", "Index", "Rooms", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+    <h4>Statuses</h4>
+    <li>@Html.ActionLink("Add & Edit Statuses", "Index", "Status", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+</div>
