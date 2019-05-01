@@ -8,12 +8,8 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body style="background-color: #E3B11F;
-            background-image:url(/Content/Images/background.jpg);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center bottom; ">
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#111683">
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -59,6 +55,8 @@
                 }
 
             </div>
+
+
                 <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @*Links for across head will go*@
@@ -68,17 +66,12 @@
             </div>
         </div>
     </div>
-    <div class="container body-content" >
-
-
-
+    <div class="container body-content">
         @RenderBody()
-        
         <hr />
-        <footer style="color:white">
+        <footer>
             <p>&copy; @DateTime.Now.Year - Purchase Requisition</p>
         </footer>
-
     </div>
 
     @Scripts.Render("~/bundles/jquery")
