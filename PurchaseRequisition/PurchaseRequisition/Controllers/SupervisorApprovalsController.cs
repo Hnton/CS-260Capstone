@@ -10,7 +10,7 @@ using PurchaseRequisition.Models;
 
 namespace PurchaseRequisition.Controllers
 {
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles ="Admin, Supervisor")]
     public class SupervisorApprovalsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -41,7 +41,7 @@ namespace PurchaseRequisition.Controllers
         public ActionResult Create()
         {
             ViewBag.ApprovalID = new SelectList(db.Approval, "ID", "ApprovalName");
-            ViewBag.SupervisorID = new SelectList(db.Users, "Id", "Email");
+            ViewBag.SupervisorID = new SelectList(db.Users.Where(i => i.Email.Equals(HttpContext.User.Identity.Name.ToString())), "ID", "Email");
             ViewBag.OrderID = new SelectList(db.Orders, "ID", "BusinessJustification");
             return View();
         }
@@ -61,7 +61,7 @@ namespace PurchaseRequisition.Controllers
             }
 
             ViewBag.ApprovalID = new SelectList(db.Approval, "ID", "ApprovalName", supervisorApproval.ApprovalID);
-            ViewBag.SupervisorID = new SelectList(db.Users, "Id", "Email", supervisorApproval.SupervisorID);
+            ViewBag.SupervisorID = new SelectList(db.Users.Where(i => i.Email.Equals(HttpContext.User.Identity.Name.ToString())), "ID", "Email");
             ViewBag.OrderID = new SelectList(db.Orders, "ID", "BusinessJustification", supervisorApproval.OrderID);
             return View(supervisorApproval);
         }

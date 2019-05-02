@@ -10,7 +10,7 @@ using PurchaseRequisition.Models;
 
 namespace PurchaseRequisition.Controllers
 {
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles ="Admin, Supervisor")]
     public class ApprovalsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

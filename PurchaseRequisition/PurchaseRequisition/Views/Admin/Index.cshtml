@@ -13,8 +13,10 @@
 
     <h4>User</h4>
     <li>@Html.ActionLink("Add User", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-    <li>@Html.ActionLink("List Users With Department", "EmployeeWithDepartmentRoomRole", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
     <li>@Html.ActionLink("List All Users", "ListUsers", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+    <h4>Budgets</h4>
+    <li>@Html.ActionLink("Add & Edit Budgets", "Index", "Budgets", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
     <h4>Roles</h4>
     <li>@Html.ActionLink("List Roles", "ListRoles", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
@@ -29,10 +31,8 @@
     <li>@Html.ActionLink("Add & Edit Categories", "Index", "Categories", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
     <h4>Campuses</h4>
-    <li>@Html.ActionLink("Add & Edit Campuses", "Index", "Campus", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <li>@Html.ActionLink("Add & Edit Campuses", "Index", "CampusAndAddress", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
-    <h4>Addresses</h4>
-    <li>@Html.ActionLink("Add & Edit Vendors", "Index", "Addresses", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
     <h4>Vendors</h4>
     <li>@Html.ActionLink("Add & Edit Vendors", "Index", "Vendors", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
@@ -43,4 +43,4 @@
     <h4>Statuses</h4>
     <li>@Html.ActionLink("Add & Edit Statuses", "Index", "Status", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
-    </div>
+</div>
