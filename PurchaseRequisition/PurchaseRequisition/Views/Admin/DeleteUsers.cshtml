@@ -1,21 +1,28 @@
-﻿
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+</head>
+
 @{
     ViewBag.Title = "DeleteUsers";
 }
 
-<h2>DeleteUsers</h2>
+<br />
+<div id="text-container">
+    <h2>DeleteUsers</h2>
 
-@model  PurchaseRequisition.Models.Employee
-@using (Html.BeginForm())
-{
+    @model  PurchaseRequisition.Models.Employee
+    @using (Html.BeginForm())
+    {
 
-    <p>Email: @Html.DisplayFor(model => model.Email)</p>
-    <p>First Name: @Html.DisplayFor(model => model.FirstName)</p>
-    <p>Last Name: @Html.DisplayFor(model => model.LastName)</p>
+        <p>Email: @Html.DisplayFor(model => model.Email)</p>
+        <p>First Name: @Html.DisplayFor(model => model.FirstName)</p>
+        <p>Last Name: @Html.DisplayFor(model => model.LastName)</p>
 
-    <p>Are you sure to delete it?</p>
-    <input type="submit" />
-    @Html.ActionLink(" Back To List", "ListUsers")
+        <p>Are you sure to delete it?</p>
+        <input type="submit" />
+        @Html.ActionLink(" Back To List", "ListUsers")
 
-}
-@Html.HiddenFor(model => model.Id)
+    }
+    @Html.HiddenFor(model => model.Id)
+    
+</div>
