@@ -247,39 +247,41 @@ namespace PurchaseRequisition.Controllers
         }
 
         //
-        // GET: /Account/ResetPassword
-        [AllowAnonymous]
-        public ActionResult ResetPassword(string code)
+        // GET: /AccountAdmin/ResetPassword
+        public ActionResult ResetPassword(string id)
         {
-            return code == null ? View("Error") : View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ResetPasswordViewModel model = new ResetPasswordViewModel() { Id = id };
+            return View(model);
         }
 
         //
-        // POST: /Account/ResetPassword
+        // POST: /AccountAdmin/ResetPassword
         [HttpPost]
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
+        public ActionResult ResetPassword(ResetPasswordViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-            var user = await UserManager.FindByNameAsync(model.Email);
-            if (user == null)
-            {
-                // Don't reveal that the user does not exist
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
-            }
-            var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
-            if (result.Succeeded)
-            {
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
-            }
-            AddErrors(result);
-            return View();
-        }
 
+            var removePassword = UserManager.RemovePassword(model.Id);
+            if (removePassword.Succeeded)
+            {
+                //Removed Password Success
+                var AddPassword = UserManager.AddPassword(model.Id, model.NewPassword);
+                if (AddPassword.Succeeded)
+                {
+                    return View("PasswordResetConfirm");
+                }
+            }
+
+            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        }
         //
         // GET: /Account/ResetPasswordConfirmation
         [AllowAnonymous]
