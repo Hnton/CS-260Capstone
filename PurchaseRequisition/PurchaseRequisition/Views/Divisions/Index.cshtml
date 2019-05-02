@@ -1,47 +1,53 @@
-﻿@model IEnumerable<PurchaseRequisition.Models.ViewModels.DivisionWithSupervisorViewModels>
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+</head>
+
+@model IEnumerable<PurchaseRequisition.Models.ViewModels.DivisionWithSupervisorViewModels>
 
 @{
     ViewBag.Title = "DivisionsWithSupervisor";
 }
+<br />
+<div id="text-container">
+    <h2>DivisionsWithSupervisor</h2>
 
-<h2>DivisionsWithSupervisor</h2>
-
-<p>
-    @Html.ActionLink("Create New", "CreateDivisionWithSupervisor")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TimeStamp)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DivisionName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Active)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SupervisorName)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+    <p>
+        @Html.ActionLink("Create New", "CreateDivisionWithSupervisor")
+    </p>
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TimeStamp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DivisionName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Active)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SupervisorName)
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeStamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DivisionName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupervisorName)
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeStamp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DivisionName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SupervisorName)
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>
