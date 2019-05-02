@@ -1,68 +1,74 @@
-﻿@model IEnumerable<PurchaseRequisition.Models.ViewModels.CampusWithAddressViewModels>
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+</head>
+
+@model IEnumerable<PurchaseRequisition.Models.ViewModels.CampusWithAddressViewModels>
 
 @{
     ViewBag.Title = "CampusWithAddress";
 }
-
-<h2>Campus With Address</h2>
-<p>
-    @Html.ActionLink("Create New Campus", "CreateCampusAndAddress")
-    <br />
-    @Html.ActionLink("Edit Name & Active", "Index", "Campus")
-    <br />
-    @Html.ActionLink("Edit Addresses", "Index", "Addresses")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CampusName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Active)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.State)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StreetAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ZIP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TimeStamp)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<br />
+<div id="text-container">
+    <h2>Campus With Address</h2>
+    <p>
+        @Html.ActionLink("Create New Campus", "CreateCampusAndAddress")
+        <br />
+        @Html.ActionLink("Edit Name & Active", "Index", "Campus")
+        <br />
+        @Html.ActionLink("Edit Addresses", "Index", "Addresses")
+    </p>
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CampusName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Active)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.State)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StreetAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ZIP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TimeStamp)
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.CampusName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StreetAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZIP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeStamp)
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CampusName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StreetAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZIP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeStamp)
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>
