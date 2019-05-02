@@ -61,6 +61,10 @@
                                     @Html.ActionLink("Edit", "EditUsers", new { id = item.Id })
                                     |
                                     @Html.ActionLink("Delete", "DeleteUsers", new { id = item.Id })
+                                    |
+                                    @Html.ActionLink("Reset Password", "ResetPassword", "Account", new { id = item.Id}, null)
+
+
                                 </td>
                             </tr>
                         }
