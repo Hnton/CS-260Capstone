@@ -1,16 +1,22 @@
-﻿
-@{
-    ViewBag.Title = "Pending";
-}
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+</head>
 
-<h2>Pending</h2>
+    @{
+        ViewBag.Title = "Pending";
+    }
+    <br />
+    <div id="text-container">
+        <h2>Pending</h2>
 
-<p>
-    @Html.ActionLink("Add Another Item", "CreateWithVendor")
-</p>
+        <p>
+            @Html.ActionLink("Add Another Item", "CreateWithVendor")
+        </p>
 
-<p>
-    @Html.ActionLink("Submit", "Index")
-</p>
+        <p>
+            @Html.ActionLink("Submit", "Index")
+        </p>
 
-@* WHERE ATTACHMENTS ARE GOING TO GO *@
+        @* WHERE ATTACHMENTS ARE GOING TO GO *@
+
+</div>
