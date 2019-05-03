@@ -612,9 +612,9 @@ C:\Users\Mikae\OneDrive\Documents\GitHub\CS-220Capstone\PurchaseRequisition\Purc
 C:\Users\Mikae\OneDrive\Documents\GitHub\CS-220Capstone\PurchaseRequisition\PurchaseRequisition\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\Mikae\OneDrive\Documents\GitHub\CS-220Capstone\PurchaseRequisition\PurchaseRequisition\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Mikae\OneDrive\Documents\GitHub\CS-220Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csprojAssemblyReference.cache
-C:\Users\Mikae\OneDrive\Documents\GitHub\CS-220Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.Migrations.Initial.resources
-C:\Users\Mikae\OneDrive\Documents\GitHub\CS-220Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csproj.GenerateResource.cache
 C:\Users\Mikae\OneDrive\Documents\GitHub\CS-220Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csproj.CoreCompileInputs.cache
 C:\Users\Mikae\OneDrive\Documents\GitHub\CS-220Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csproj.CopyComplete
 C:\Users\Mikae\OneDrive\Documents\GitHub\CS-220Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.dll
 C:\Users\Mikae\OneDrive\Documents\GitHub\CS-220Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.pdb
+C:\Users\Mikae\OneDrive\Documents\GitHub\CS-220Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.Migrations.initial.resources
+C:\Users\Mikae\OneDrive\Documents\GitHub\CS-220Capstone\PurchaseRequisition\PurchaseRequisition\obj\Debug\PurchaseRequisition.csproj.GenerateResource.cache

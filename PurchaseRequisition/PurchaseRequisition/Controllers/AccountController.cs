@@ -276,7 +276,7 @@ namespace PurchaseRequisition.Controllers
                 var AddPassword = UserManager.AddPassword(model.Id, model.NewPassword);
                 if (AddPassword.Succeeded)
                 {
-                    return View("PasswordResetConfirm");
+                    return RedirectToAction("ListUsers", "Admin");
                 }
             }
 

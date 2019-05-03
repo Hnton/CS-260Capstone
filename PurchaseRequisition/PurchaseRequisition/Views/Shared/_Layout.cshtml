@@ -22,13 +22,15 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                @Html.ActionLink("Purchase Requisition", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 @if (User.Identity.IsAuthenticated)
                 {
                     if (User.IsInRole("Admin"))
                     {
                         @Html.ActionLink("Admin Page", "Index", "Admin", new { area = "" }, new { @class = "navbar-brand" })
                         @Html.ActionLink("Ordering", "Index", "Purchase", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Requests", "Index", "Requests", new { area = "" }, new { @class = "navbar-brand" })
+
 
                     }
 
@@ -42,6 +44,7 @@
                     if (User.IsInRole("Supervisor"))
                     {
                         @Html.ActionLink("Ordering", "Index", "Purchase", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Approvals", "Create", "SupervisorApprovals", new { area = "" }, new { @class = "navbar-brand" })
                         @Html.ActionLink("Requests", "Index", "SupervisorApprovals", new { area = "" }, new { @class = "navbar-brand" })
 
 
@@ -49,7 +52,8 @@
 
                     if (User.IsInRole("CFO"))
                     {
-                        @Html.ActionLink("Ordering", "Index", "Purchase", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Budgets", "Index", "Budgets", new { area = "" }, new { @class = "navbar-brand" })
+
 
                     }
 
