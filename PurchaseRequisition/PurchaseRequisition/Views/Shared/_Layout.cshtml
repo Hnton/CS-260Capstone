@@ -6,9 +6,9 @@
     <title>@ViewBag.Title - Purchase Requisition</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
 </head>
-<body  style="background-color: #E3B11F;
+<body style="background-color: #E3B11F;
             background-image:url(/Content/Images/background.jpg);
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -71,21 +71,24 @@
             </div>
 
 
-                <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @*Links for across head will go*@
-                    
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()      
-    </div>
+    
+    
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+    
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>
