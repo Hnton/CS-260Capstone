@@ -20,6 +20,7 @@ namespace PurchaseRequisition.Controllers
         public ActionResult Index()
         {
             var list = (from o in db.Orders
+                        where o.Employee.Email == User.Identity.Name
                         join s in db.SupervisorApprovals
                         on o.ID equals s.ID
                         into ThisList
