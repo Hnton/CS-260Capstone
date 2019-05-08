@@ -11,14 +11,12 @@
 <div id="text-container">
     <h2>DivisionsWithSupervisor</h2>
 
-    <p>
-        @Html.ActionLink("Create New", "CreateDivisionWithSupervisor")
-    </p>
+    
     <table class="table">
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.TimeStamp)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.DivisionName)
             </th>
@@ -33,20 +31,23 @@
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TimeStamp)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DivisionName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Active)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SupervisorName)
-                </td>
-            </tr>
+        <tr>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.TimeStamp)
+        </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.DivisionName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupervisorName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+            </td>
+        </tr>
         }
 
     </table>

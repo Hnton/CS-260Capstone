@@ -21,9 +21,9 @@
     </p>
     <table class="table">
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.TimeStamp)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.DA_CODE)
             </th>
@@ -46,9 +46,9 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.TimeStamp)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.DA_CODE)
                 </td>

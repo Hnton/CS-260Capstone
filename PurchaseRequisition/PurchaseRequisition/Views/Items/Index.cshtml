@@ -17,9 +17,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.TimeStamp)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -31,9 +31,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.TimeStamp)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |

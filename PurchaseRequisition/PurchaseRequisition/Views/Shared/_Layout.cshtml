@@ -28,8 +28,6 @@
                     if (User.IsInRole("Admin"))
                     {
                         @Html.ActionLink("Admin Page", "Index", "Admin", new { area = "" }, new { @class = "navbar-brand" })
-                        @Html.ActionLink("Ordering", "Index", "Purchase", new { area = "" }, new { @class = "navbar-brand" })
-                        @Html.ActionLink("Requests", "Index", "Requests", new { area = "" }, new { @class = "navbar-brand" })
 
 
                     }
@@ -44,8 +42,7 @@
                     if (User.IsInRole("Supervisor"))
                     {
                         @Html.ActionLink("Ordering", "Index", "Purchase", new { area = "" }, new { @class = "navbar-brand" })
-                        @Html.ActionLink("Approvals", "Create", "SupervisorApprovals", new { area = "" }, new { @class = "navbar-brand" })
-                        @Html.ActionLink("Requests", "Index", "SupervisorApprovals", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Approvals", "Index", "Orders", new { area = "" }, new { @class = "navbar-brand" })
 
 
                     }
@@ -59,6 +56,7 @@
 
                     if (User.IsInRole("Auditor"))
                     {
+                        @Html.ActionLink("Auditor Page", "Index", "Auditor", new { area = "" }, new { @class = "navbar-brand" })
 
                     }
 

@@ -91,13 +91,16 @@ namespace PurchaseRequisition.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,DateMade,DateOrdered,StateContract,BusinessJustification,EmployeeID,StatusID,CategoryID,BudgetCodeID,TimeStamp")] Order order)
+        public ActionResult Edit(Order order)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(order).State = EntityState.Modified;
+
+                order.DateMade = DateTime.Now;
+                order.DateOrdered = DateTime.Now;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             ViewBag.BudgetCodeID = new SelectList(db.BudgetCodes, "ID", "BudgetCodeName", order.BudgetCodeID);
             ViewBag.CategoryID = new SelectList(db.Categories, "ID", "CategoryName", order.CategoryID);

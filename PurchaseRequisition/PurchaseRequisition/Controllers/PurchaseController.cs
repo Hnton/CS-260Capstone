@@ -5,7 +5,9 @@ using PurchaseRequisition.Models;
 using PurchaseRequisition.Models.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -199,7 +201,44 @@ namespace PurchaseRequisition.Controllers
             return View(request);
         }
 
+        // GET: Orders/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Order order = db.Orders.Find(id);
+            if (order == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.BudgetCodeID = new SelectList(db.BudgetCodes, "ID", "BudgetCodeName", order.BudgetCodeID);
+            ViewBag.CategoryID = new SelectList(db.Categories, "ID", "CategoryName", order.CategoryID);
+            ViewBag.EmployeeID = new SelectList(db.Users, "Id", "Email", order.EmployeeID);
+            ViewBag.StatusID = new SelectList(db.Statuses, "ID", "StatusName", order.StatusID);
+            return View(order);
+        }
 
+        // POST: Orders/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit( Order order)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(order).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.BudgetCodeID = new SelectList(db.BudgetCodes, "ID", "BudgetCodeName", order.BudgetCodeID);
+            ViewBag.CategoryID = new SelectList(db.Categories, "ID", "CategoryName", order.CategoryID);
+            ViewBag.EmployeeID = new SelectList(db.Users, "Id", "Email", order.EmployeeID);
+            ViewBag.StatusID = new SelectList(db.Statuses, "ID", "StatusName", order.StatusID);
+            return View(order);
+        }
 
     }
 }

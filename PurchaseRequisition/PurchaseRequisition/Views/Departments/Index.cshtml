@@ -13,14 +13,14 @@
     <h2>Departments With Division</h2>
 
     <p>
-        @Html.ActionLink("Create New", "CreateDepartmentWithDivision") |
+        @Html.ActionLink("Create New", "CreateDepartmentWithDivision") 
         @*@Html.ActionLink("Edit", "Edit")*@
     </p>
     <table class="table">
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.TimeStamp)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.DepartmentName)
             </th>
@@ -36,9 +36,9 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.TimeStamp)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.DepartmentName)
                 </td>

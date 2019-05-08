@@ -345,6 +345,7 @@
     <Compile Include="Controllers\AddressesController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ApprovalsController.cs" />
+    <Compile Include="Controllers\AuditorController.cs" />
     <Compile Include="Controllers\BudgetAmountsController.cs" />
     <Compile Include="Controllers\BudgetCodesController.cs" />
     <Compile Include="Controllers\BudgetsController.cs" />
@@ -470,7 +471,6 @@
     <Content Include="Views\Divisions\Create.cshtml" />
     <Content Include="Views\Divisions\Delete.cshtml" />
     <Content Include="Views\Divisions\Details.cshtml" />
-    <Content Include="Views\Divisions\Edit.cshtml" />
     <Content Include="Views\Divisions\Index.cshtml" />
     <Content Include="Views\Campus\Create.cshtml" />
     <Content Include="Views\Campus\Delete.cshtml" />
@@ -574,6 +574,14 @@
     <Content Include="Views\Departments\CreateDepartmentWithDivision.cshtml" />
     <Content Include="Views\Divisions\CreateDivisionWithSupervisor.cshtml" />
     <Content Include="Views\Vendors\CreateVendorWithAddress.cshtml" />
+    <Content Include="Views\Purchase\Edit.cshtml" />
+    <Content Include="Views\Auditor\viewCampuses.cshtml" />
+    <Content Include="Views\Auditor\viewDepartments.cshtml" />
+    <Content Include="Views\Auditor\viewBudgets.cshtml" />
+    <Content Include="Views\Auditor\viewOrders.cshtml" />
+    <Content Include="Views\Auditor\viewVendors.cshtml" />
+    <Content Include="Views\Auditor\viewUsers.cshtml" />
+    <Content Include="Views\Auditor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -41,9 +41,9 @@
         <th>
             @Html.DisplayNameFor(model => model.ReasonChosen)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.TimeStamp)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -79,13 +79,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.ReasonChosen)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.TimeStamp)
-        </td>
+        </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edit Item", "Edit", new { id=item.ID })
         </td>
     </tr>
 }

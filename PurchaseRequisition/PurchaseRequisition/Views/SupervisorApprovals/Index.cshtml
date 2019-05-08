@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Pending Approvals", "Create")
 </p>
 <table class="table">
     <tr>
@@ -23,9 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.DeniedJustification)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.TimeStamp)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -43,13 +43,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.DeniedJustification)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.TimeStamp)
-        </td>
+        </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edit Approval", "Edit", new { id=item.ID })
         </td>
     </tr>
 }

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<PurchaseRequisition.Models.ViewModels.BudgetCodeWithAmountViewModels>
+
+@{
+    ViewBag.Title = "viewBudgets";
+}
+
+<h2>viewBudgets</h2>
+<div id="text-container">
+    <table class="table">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.DA_CODE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BudgetCodeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalAmount)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DA_CODE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BudgetCodeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalAmount)
+                </td>
+
+            </tr>
+        }
+        
+    </table>
+</div>

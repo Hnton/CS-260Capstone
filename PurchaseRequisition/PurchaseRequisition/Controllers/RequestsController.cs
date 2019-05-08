@@ -16,9 +16,11 @@ namespace PurchaseRequisition.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Requests
-        public ActionResult Index()
+        public ActionResult Index(string bus)
         {
-            var requests = db.Requests.Include(r => r.Item).Include(r => r.Order).Include(r => r.Vendor);
+
+            var requests = db.Requests.Where(i=> i.Order.BusinessJustification.Equals(bus)).Include(r => r.Item).Include(r => r.Order).Include(r => r.Vendor);
+
             return View(requests.ToList());
         }
 

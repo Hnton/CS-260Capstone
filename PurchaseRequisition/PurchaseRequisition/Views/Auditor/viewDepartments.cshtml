@@ -1,0 +1,44 @@
+﻿@model IEnumerable<PurchaseRequisition.Models.ViewModels.DepartmentWithDivisionViewModels>
+
+@{
+    ViewBag.Title = "viewDepartments";
+}
+
+<h2>viewDepartments</h2>
+
+<div id="text-container">
+    <table class="table">
+        <tr>
+        
+            <th>
+                @Html.DisplayNameFor(model => model.DepartmentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DivisionName)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DivisionName)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+    </div>

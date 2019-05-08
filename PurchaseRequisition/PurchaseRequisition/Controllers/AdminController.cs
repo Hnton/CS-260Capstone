@@ -23,7 +23,6 @@ namespace PurchaseRequisition.Controllers
     {
 
         ApplicationDbContext context = new ApplicationDbContext();
-        private ApplicationUserManager userManager;
 
         // GET: Admin
         public ActionResult Index()
