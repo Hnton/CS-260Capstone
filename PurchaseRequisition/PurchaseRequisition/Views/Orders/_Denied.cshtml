@@ -1,0 +1,71 @@
+﻿@model IEnumerable<PurchaseRequisition.Models.Order>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BudgetCode.BudgetCodeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status.StatusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateMade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOrdered)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateContract)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusinessJustification)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.TimeStamp)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BudgetCode.BudgetCodeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status.StatusName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateMade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOrdered)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StateContract)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusinessJustification)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.TimeStamp)
+                </td>*@
+            <td>
+                @Html.ActionLink("Approve or Deny", "Edit", new { id = item.ID })
+            </td>
+        </tr>
+
+    }
+</table>

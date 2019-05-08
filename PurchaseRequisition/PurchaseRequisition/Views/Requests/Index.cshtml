@@ -6,86 +6,88 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Item.ItemName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Order.BusinessJustification)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Vendor.VendorName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QuantityRequested)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EstimatedCost)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EstimatedTotal)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PaidCost)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PaidTotal)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Chosen)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReasonChosen)
-        </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.TimeStamp)
-        </th>*@
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Item.ItemName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Order.BusinessJustification)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Vendor.VendorName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuantityRequested)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EstimatedCost)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EstimatedTotal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PaidCost)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PaidTotal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Chosen)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReasonChosen)
-        </td>
-        @*<td>
+<div id="text-container">
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Item.ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order.BusinessJustification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vendor.VendorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantityRequested)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstimatedCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstimatedTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaidCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaidTotal)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Chosen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReasonChosen)
+            </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.TimeStamp)
+                </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Item.ItemName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Order.BusinessJustification)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Vendor.VendorName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.QuantityRequested)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.EstimatedCost)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.EstimatedTotal)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PaidCost)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PaidTotal)
+    </td>
+    @*<td>
+        @Html.DisplayFor(modelItem => item.Chosen)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ReasonChosen)
+    </td>*@
+    @*<td>
             @Html.DisplayFor(modelItem => item.TimeStamp)
         </td>*@
-        <td>
-            @Html.ActionLink("Edit Item", "Edit", new { id=item.ID })
-        </td>
-    </tr>
+    <td>
+        @Html.ActionLink("Edit Item", "Edit", new { id = item.ID })
+    </td>
+</tr>
 }
 
-</table>
+    </table>
+    </div>

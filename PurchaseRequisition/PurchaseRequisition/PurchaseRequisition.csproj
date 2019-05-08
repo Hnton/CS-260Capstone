@@ -582,6 +582,11 @@
     <Content Include="Views\Auditor\viewVendors.cshtml" />
     <Content Include="Views\Auditor\viewUsers.cshtml" />
     <Content Include="Views\Auditor\Index.cshtml" />
+    <Content Include="Views\Purchase\Approved.cshtml" />
+    <Content Include="Views\Orders\_Approved.cshtml" />
+    <Content Include="Views\Orders\_Denied.cshtml" />
+    <Content Include="Views\Orders\_Pending.cshtml" />
+    <Content Include="Views\Orders\_Cancelled.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

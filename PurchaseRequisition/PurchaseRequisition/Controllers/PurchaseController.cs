@@ -18,6 +18,44 @@ namespace PurchaseRequisition.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        [Authorize(Roles = "Purchasing")]
+        public ActionResult Approved()
+        {
+            var list = (from o in db.Orders
+                        where o.Status.StatusName.Equals("Approved")
+                        join s in db.SupervisorApprovals
+                        on o.ID equals s.ID
+                        into ThisList
+                        from s in ThisList.DefaultIfEmpty()
+                        select new
+                        {
+                            EmployeeName = o.Employee.FirstName + " " + o.Employee.LastName,
+                            SupervisorName = s.Employee.FirstName + " " + s.Employee.LastName,
+                            StatusName = o.Status.StatusName,
+                            CategoryName = o.Category.CategoryName,
+                            BudgetCodeName = o.BudgetCode.BudgetCodeName,
+                            DateMade = o.DateMade,
+                            DateOrdered = o.DateOrdered,
+                            StateContract = o.StateContract,
+                            BusinessJustification = o.BusinessJustification
+
+                        }).ToList()
+                      .Select(x => new PurchaseReqWithReqestViewModels()
+                      {
+                          EmployeeName = x.EmployeeName,
+                          SupervisorName = x.SupervisorName,
+                          StatusName = x.StatusName,
+                          CategoryName = x.CategoryName,
+                          BudgetCodeName = x.BudgetCodeName,
+                          DateMade = x.DateMade,
+                          DateOrdered = x.DateOrdered,
+                          StateContract = x.StateContract,
+                          BusinessJustification = x.BusinessJustification
+                      });
+
+            return View(list);
+        }
+        [Authorize(Roles = "User, Admin, Supervisor")]
         // GET: Purchase
         public ActionResult Index()
         {
@@ -55,7 +93,7 @@ namespace PurchaseRequisition.Controllers
 
             return View(list);
         }
-
+        [Authorize(Roles = "User, Admin, Supervisor")]
         public ActionResult ItemWithVendor()
         {
             var list = (from r in db.Requests
@@ -96,12 +134,12 @@ namespace PurchaseRequisition.Controllers
 
             return View(list);
         }
-
+        [Authorize(Roles = "User, Admin, Supervisor")]
         public ActionResult Pending()
         {
             return View();
         }
-
+        [Authorize(Roles = "User, Admin, Supervisor")]
         // GET: Requests/Create
         public ActionResult CreateWithVendor()
         {
@@ -116,6 +154,7 @@ namespace PurchaseRequisition.Controllers
         // POST: Requests/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "User, Admin, Supervisor")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateWithVendor(Request request, Item item, string button)
@@ -150,6 +189,7 @@ namespace PurchaseRequisition.Controllers
         }
 
         // GET: Requests/Create
+        [Authorize(Roles = "User, Admin, Supervisor")]
         public ActionResult Create()
         {
             var roleManager = new Microsoft.AspNet.Identity.RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext()));
@@ -173,6 +213,7 @@ namespace PurchaseRequisition.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "User, Admin, Supervisor")]
         public ActionResult Create(Order order, Item item,Request request)
         {
             if (ModelState.IsValid)
@@ -202,6 +243,7 @@ namespace PurchaseRequisition.Controllers
         }
 
         // GET: Orders/Edit/5
+        [Authorize(Roles = "User, Admin, Supervisor")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -225,6 +267,7 @@ namespace PurchaseRequisition.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "User, Admin, Supervisor")]
         public ActionResult Edit( Order order)
         {
             if (ModelState.IsValid)

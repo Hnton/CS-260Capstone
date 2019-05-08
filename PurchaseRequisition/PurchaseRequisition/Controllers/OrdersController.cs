@@ -21,6 +21,34 @@ namespace PurchaseRequisition.Controllers
             return View(orders.ToList());
         }
 
+        public ActionResult _Approved()
+        {
+            var orders = db.Orders.Include(o => o.BudgetCode).Include(o => o.Category).Include(o => o.Employee).Include(o => o.Status).Where(i => i.Status.StatusName.Equals("Approved"));
+
+            return PartialView(orders.ToList());
+        }
+
+        public ActionResult _Denied()
+        {
+            var orders = db.Orders.Include(o => o.BudgetCode).Include(o => o.Category).Include(o => o.Employee).Include(o => o.Status).Where(i => i.Status.StatusName.Equals("Denied"));
+
+            return PartialView(orders.ToList());
+        }
+
+        public ActionResult _Cancelled()
+        {
+            var orders = db.Orders.Include(o => o.BudgetCode).Include(o => o.Category).Include(o => o.Employee).Include(o => o.Status).Where(i => i.Status.StatusName.Equals("Cancelled"));
+
+            return PartialView(orders.ToList());
+        }
+
+        public ActionResult _Pending()
+        {
+            var orders = db.Orders.Include(o => o.BudgetCode).Include(o => o.Category).Include(o => o.Employee).Include(o => o.Status).Where(i => i.Status.StatusName.Equals("Pending"));
+
+            return PartialView(orders.ToList());
+        }
+
         // GET: Orders/Details/5
         public ActionResult Details(int? id)
         {

@@ -1,82 +1,16 @@
-﻿@model IEnumerable<PurchaseRequisition.Models.Order>
+﻿
 
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <div id="text-container">
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.BudgetCode.BudgetCodeName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category.CategoryName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Employee.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status.StatusName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateMade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateOrdered)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StateContract)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BusinessJustification)
-            </th>
-            @*<th>
-                    @Html.DisplayNameFor(model => model.TimeStamp)
-                </th>*@
-            <th></th>
-        </tr>
+    @{
+        <h2>Pending Orders</h2>
+        @Html.Action("_Pending", "Orders")
+        <h2>Approved Orders</h2>
+        @Html.Action("_Approved", "Orders")
+        <h2>Denied Orders</h2>
+        @Html.Action("_Denied", "Orders")
+        <h2>Cancelled Orders</h2>
+        @Html.Action("_Cancelled", "Orders")
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BudgetCode.BudgetCodeName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Employee.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status.StatusName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateMade)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateOrdered)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StateContract)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BusinessJustification)
-                </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.TimeStamp)
-                    </td>*@
-                <td>
-                    @Html.ActionLink("Approve or Deny", "Edit", new { id = item.ID })
-                </td>
-            </tr>
-        }
+    }
 
-    </table>
- </div>
+</div>
