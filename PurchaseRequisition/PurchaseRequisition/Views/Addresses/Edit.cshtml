@@ -9,10 +9,11 @@
     ViewBag.Title = "Edit";
 }
 
-<div id="text-container">
 
-<h2>Edit</h2>
+
+<br />
 <div id="text-container">
+    <h2>Edit Address</h2>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -74,6 +75,5 @@
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>
-   </div>
-
 </div>
+

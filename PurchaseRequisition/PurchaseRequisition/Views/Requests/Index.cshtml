@@ -1,13 +1,13 @@
-﻿@model IEnumerable<PurchaseRequisition.Models.Request>
+﻿
+@model IEnumerable<PurchaseRequisition.Models.Request>
 
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
-
+<br />
 <div id="text-container">
+
+    <h2>Requests</h2>
 
     <table class="table">
         <tr>
@@ -98,7 +98,7 @@
             <td>
                 <b>Total:</b><br /> $@ViewBag.TotalEstimatedAmount
             </td>
-            <td></td>            
+            <td></td>
             <td>
                 <b>Total:</b><br /> $@ViewBag.TotalPaidAmount
             </td>

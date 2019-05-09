@@ -10,9 +10,9 @@
 
 <br />
 <div id="text-container">
-    <h2>Index</h2>
+    <h2>Campus</h2>
 
-    
+
     <table class="table">
         <tr>
             @*<th>
@@ -25,8 +25,8 @@
                 @Html.DisplayNameFor(model => model.Active)
             </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.TimeStamp)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.TimeStamp)
+                </th>*@
             <th></th>
         </tr>
 
@@ -43,14 +43,18 @@
                     @Html.DisplayFor(modelItem => item.Active)
                 </td>
                 @*<td>
-                    @Html.DisplayFor(modelItem => item.TimeStamp)
-                </td>*@
+                        @Html.DisplayFor(modelItem => item.TimeStamp)
+                    </td>*@
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) 
-                   
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+
                 </td>
             </tr>
         }
 
     </table>
+    <div>
+        @Html.ActionLink("Back to List", "Index", "CampusAndAddress")
     </div>
+
+</div>

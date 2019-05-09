@@ -3,33 +3,35 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.BudgetCode.BudgetCodeName)
+            Budget Code
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Category.CategoryName)
+            Category
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Employee.Email)
+            Email
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Status.StatusName)
+            Status
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateMade)
+            Created
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateOrdered)
+            Ordered
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.StateContract)
+            State Contract
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BusinessJustification)
+            Business Justification
         </th>
         @*<th>
-                @Html.DisplayNameFor(model => model.TimeStamp)
-            </th>*@
-        <th></th>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </th>*@
+        <th>
+            Action
+        </th>
     </tr>
 
     @foreach (var item in Model)

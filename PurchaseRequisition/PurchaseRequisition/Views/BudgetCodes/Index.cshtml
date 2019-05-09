@@ -9,9 +9,9 @@
     }
     <br />
     <div id="text-container">
-        <h2>Index</h2>
+        <h2>Budget Codes</h2>
 
-        
+
         <table class="table">
             <tr>
                 <th>
@@ -51,12 +51,18 @@
                         @Html.DisplayFor(modelItem => item.TimeStamp)
                     </td>*@
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) 
-                     
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+
                     </td>
                 </tr>
             }
 
         </table>
-        <div/>
-</div>
+
+        <div>
+            @Html.ActionLink("Back to List", "Index", "Budgets")
+        </div>
+
+
+        <div />
+    </div>

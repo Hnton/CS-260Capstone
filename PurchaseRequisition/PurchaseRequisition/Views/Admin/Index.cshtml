@@ -1,5 +1,19 @@
 ﻿<head>
     <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+    <style>
+        .column {
+            float: left;
+            padding-left: 5%;
+            width: 33%;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;            
+        }
+    </style>
 </head>
 
 @{
@@ -7,37 +21,50 @@
 }
 <br />
 <div id="text-container">
-    <h2>Admin</h2>
+    <h2>Admin Page</h2>    
 
-    <br />
+    <div class="row">
 
-    <h4>User</h4>
-    <li>@Html.ActionLink("Add User", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-    <li>@Html.ActionLink("List All Users", "ListUsers", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <div class="column">
 
-    <h4>Budgets</h4>
-    <li>@Html.ActionLink("Add & Edit Budgets", "Index", "Budgets", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+            <h4>Budgets</h4>
+            <li>@Html.ActionLink("Add & Edit Budgets", "Index", "Budgets", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
-    <h4>Roles</h4>
-    <li>@Html.ActionLink("List Roles", "ListRoles", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+            <h4>Campuses</h4>
+            <li>@Html.ActionLink("Add & Edit Campuses", "Index", "CampusAndAddress", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
-    <h4>Departments</h4>
-    <li>@Html.ActionLink("Add Departments", "Index", "Departments", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+            <h4>Categories</h4>
+            <li>@Html.ActionLink("Add & Edit Categories", "Index", "Categories", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        </div>
 
-    <h4>Categories</h4>
-    <li>@Html.ActionLink("Add & Edit Categories", "Index", "Categories", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <div class="column">
 
-    <h4>Campuses</h4>
-    <li>@Html.ActionLink("Add & Edit Campuses", "Index", "CampusAndAddress", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+            <h4>Departments</h4>
+            <li>@Html.ActionLink("Add Departments", "Index", "Departments", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+            <h4>Roles</h4>
+            <li>@Html.ActionLink("List Roles", "ListRoles", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                       
+            <h4>Rooms</h4>
+            <li>@Html.ActionLink("Add & Edit Rooms", "Index", "Rooms", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                       
+        </div>
+
+        <div class="column">
+
+            <h4>Statuses</h4>
+            <li>@Html.ActionLink("Add & Edit Statuses", "Index", "Status", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+            <h4>User</h4>
+            <li>@Html.ActionLink("Add User", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+            <li>@Html.ActionLink("List All Users", "ListUsers", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+            <h4>Vendors</h4>
+            <li>@Html.ActionLink("Add & Edit Vendors", "Index", "Vendors", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
 
-    <h4>Vendors</h4>
-    <li>@Html.ActionLink("Add & Edit Vendors", "Index", "Vendors", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
-    <h4>Rooms</h4>
-    <li>@Html.ActionLink("Add & Edit Rooms", "Index", "Rooms", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        </div>
 
-    <h4>Statuses</h4>
-    <li>@Html.ActionLink("Add & Edit Statuses", "Index", "Status", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
-</div>
+    </div>

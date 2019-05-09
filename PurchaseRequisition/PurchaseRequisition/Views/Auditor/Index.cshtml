@@ -1,20 +1,50 @@
-﻿
+﻿<style>
+    .column {
+        float: left;
+        padding-left: 5%;
+        width: 33%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+
+
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Auditor Page</h2>
+<br />
 <div id="text-container">
-    @Html.ActionLink("All Users", "viewUsers")
+    <h2>Auditor Page</h2>
     <br />
-    @Html.ActionLink("All Campuses", "viewCampuses")
-    <br />
-    @Html.ActionLink("All Budgets", "viewBudgets")
-    <br />
-    @Html.ActionLink("All Departments", "viewDepartments")
-    <br />
-    @Html.ActionLink("All Vendors", "viewVendors")
-    <br />
-    @Html.ActionLink("All Orders", "viewOrders")
-    <br />
+
+    <div class="row">
+
+        <div class="column">
+            @Html.ActionLink("All Users", "viewUsers")
+            <br />
+            @Html.ActionLink("All Campuses", "viewCampuses")
+            <br />  
+        </div>
+
+        <div class="column">
+            @Html.ActionLink("All Budgets", "viewBudgets")
+            <br />
+            @Html.ActionLink("All Departments", "viewDepartments")
+            <br />
+        </div>
+
+        <div class="column">
+            @Html.ActionLink("All Vendors", "viewVendors")
+            <br />
+            @Html.ActionLink("All Orders", "viewOrders")
+            <br />
+        </div>
+    </div>
 </div>

@@ -4,32 +4,33 @@
     ViewBag.Title = "viewOrders";
 }
 
-<h2>viewOrders</h2>
 
+<br />
 <div id="text-container">
+    <h2>View Orders</h2>
     <table class="table">
         <tr>
 
             <th>
                 @Html.DisplayNameFor(model => model.EmployeeName)
             </th>
-            
+
             <th>
                 @Html.DisplayNameFor(model => model.SupervisorName)
             </th>
-            
+
             <th>
                 @Html.DisplayNameFor(model => model.StatusName)
             </th>
-            
+
             <th>
                 @Html.DisplayNameFor(model => model.CategoryName)
             </th>
-            
+
             <th>
                 @Html.DisplayNameFor(model => model.BudgetCodeName)
             </th>
-            
+
             <th>
                 @Html.DisplayNameFor(model => model.DateMade)
             </th>
@@ -52,23 +53,23 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.EmployeeName)
                 </td>
-                
+
                 <td>
                     @Html.DisplayFor(modelItem => item.SupervisorName)
                 </td>
-                
+
                 <td>
                     @Html.DisplayFor(modelItem => item.StatusName)
                 </td>
-               
+
                 <td>
                     @Html.DisplayFor(modelItem => item.CategoryName)
                 </td>
-                
+
                 <td>
                     @Html.DisplayFor(modelItem => item.BudgetCodeName)
                 </td>
-               
+
                 <td>
                     @Html.DisplayFor(modelItem => item.DateMade)
                 </td>
@@ -89,4 +90,4 @@
         }
 
     </table>
- </div>
+</div>
