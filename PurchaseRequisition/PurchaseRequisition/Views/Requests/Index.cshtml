@@ -36,11 +36,11 @@
                 @Html.DisplayNameFor(model => model.PaidTotal)
             </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.Chosen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReasonChosen)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.Chosen)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReasonChosen)
+                </th>*@
             @*<th>
                     @Html.DisplayNameFor(model => model.TimeStamp)
                 </th>*@
@@ -49,45 +49,50 @@
 
         @foreach (var item in Model)
         {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Item.ItemName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Order.BusinessJustification)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Vendor.VendorName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.QuantityRequested)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.EstimatedCost)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.EstimatedTotal)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.PaidCost)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.PaidTotal)
-    </td>
-    @*<td>
-        @Html.DisplayFor(modelItem => item.Chosen)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ReasonChosen)
-    </td>*@
-    @*<td>
-            @Html.DisplayFor(modelItem => item.TimeStamp)
-        </td>*@
-    <td>
-        @Html.ActionLink("Edit Item", "Edit", new { id = item.ID })
-    </td>
-</tr>
-}
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item.ItemName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Order.BusinessJustification)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vendor.VendorName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantityRequested)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EstimatedCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EstimatedTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaidCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaidTotal)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Chosen)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReasonChosen)
+                    </td>*@
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.TimeStamp)
+                    </td>*@
+                <td>
+                    @Html.ActionLink("Edit Item", "Edit", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
 
     </table>
+    <div>
+        TOTAL: @ViewBag.TotalAmount
     </div>
+</div>
+

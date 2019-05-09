@@ -197,8 +197,7 @@ namespace PurchaseRequisition.Controllers
             string Supervisor = roleManager.FindByName("Supervisor").Id;
 
             ViewBag.EmployeeID = new SelectList(db.Users.Where(i => i.Email.Equals(HttpContext.User.Identity.Name.ToString())), "ID", "Email");
-            ViewBag.SupervisorID = new SelectList(db.Users.Where(u => u.Roles.Any(r => r.RoleId == Supervisor)).ToList(), "ID", "Email");
-
+            ViewBag.SupervisorID = new SelectList(db.Employees.Where(u => u.Roles.Any(r => r.RoleId == Supervisor && u.Department.DepartmentName.Equals("STEM"))).ToList(), "ID", "Email");
 
             ViewBag.BudgetCodeID = new SelectList(db.BudgetCodes, "Id", "BudgetCodeName");
             ViewBag.StatusID = new SelectList(db.Statuses.Where(s => s.StatusName == "Pending"), "Id", "StatusName");

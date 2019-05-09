@@ -58,6 +58,7 @@ namespace PurchaseRequisition.Controllers
         {
             ViewBag.AddressID = new SelectList(db.Addresses, "ID", "City");
             return View();
+
         }
 
         // POST: Vendors/Create

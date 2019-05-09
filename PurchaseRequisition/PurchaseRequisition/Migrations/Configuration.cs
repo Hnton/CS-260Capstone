@@ -269,26 +269,7 @@ namespace PurchaseRequisition.Migrations
             }
 
 
-            // ADDING JARED GUMP
-            if (!context.Users.Any(u => u.UserName == "jared.gump@develop.com"))
-            {
-                var supervisor5 = new Employee
-                {
-                    Id = "JARED",
-                    UserName = "jared.gump@develop.com",
-                    Email = "jared.gump@develop.com",
-                    PhoneNumber = "(304) 424-8000 x226",
-                    FirstName = "Jared",
-                    LastName = "Gump",
-                    Active = true,
-                    RoomID = 8,
 
-                    PasswordHash = PasswordHash.HashPassword("Admin1234!")
-                };
-
-                UserManager.Create(supervisor5);
-                UserManager.AddToRole(supervisor5.Id, "Supervisor");
-            }
 
 
             // ADDING ALICE HARRIS
@@ -438,7 +419,28 @@ namespace PurchaseRequisition.Migrations
                      TimeStamp = DateTime.Now
                  }
                 );
- 
+
+            // ADDING JARED GUMP
+            if (!context.Users.Any(u => u.UserName == "jared.gump@develop.com"))
+            {
+                var supervisor5 = new Employee
+                {
+                    Id = "JARED",
+                    UserName = "jared.gump@develop.com",
+                    Email = "jared.gump@develop.com",
+                    PhoneNumber = "(304) 424-8000 x226",
+                    FirstName = "Jared",
+                    LastName = "Gump",
+                    Active = true,
+                    RoomID = 8,
+                    DepartmentID = 2,
+
+                    PasswordHash = PasswordHash.HashPassword("Admin1234!")
+                };
+
+                UserManager.Create(supervisor5);
+                UserManager.AddToRole(supervisor5.Id, "Supervisor");
+            }
 
             //ADDING ADMIN
             if (!context.Users.Any(u => u.UserName == "Admin@develop.com"))
@@ -506,7 +508,7 @@ namespace PurchaseRequisition.Migrations
                     LastName = "Anthony",
                     Active = true,
                     RoomID = 2,
-                    DepartmentID = 2,
+                    DepartmentID = 3,
 
                     PasswordHash = PasswordHash.HashPassword("Admin1234!")
                 };
