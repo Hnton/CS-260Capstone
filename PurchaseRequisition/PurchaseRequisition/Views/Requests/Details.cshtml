@@ -4,103 +4,105 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div id="text-container">
+    <h2>Details of Request</h2>
 
-<div>
-    <h4>Request</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Item.ItemName)
-        </dt>
+    <div>
+        @*<h4>Request</h4>*@
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Item.ItemName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Item.ItemName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Item.ItemName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Order.BusinessJustification)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Order.BusinessJustification)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Order.BusinessJustification)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Order.BusinessJustification)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Vendor.VendorName)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Vendor.VendorName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Vendor.VendorName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Vendor.VendorName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.QuantityRequested)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.QuantityRequested)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.QuantityRequested)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.QuantityRequested)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EstimatedCost)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.EstimatedCost)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.EstimatedCost)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.EstimatedCost)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EstimatedTotal)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.EstimatedTotal)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.EstimatedTotal)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.EstimatedTotal)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PaidCost)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.PaidCost)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PaidCost)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.PaidCost)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PaidTotal)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.PaidTotal)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PaidTotal)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.PaidTotal)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Chosen)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Chosen)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Chosen)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Chosen)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ReasonChosen)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ReasonChosen)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ReasonChosen)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ReasonChosen)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TimeStamp)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.TimeStamp)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TimeStamp)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.TimeStamp)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -10,13 +10,13 @@
     @if(User.Identity.IsAuthenticated)
     {
     <h2>
-        Hello @User.Identity.Name, Welcome to the WVUP Purchase Requisition
+        Hello @User.Identity.Name<br /><br /> Welcome to the West Virginia University at Parkersburg Purchase Requisition
     </h2>
     }
 
     @if (!User.Identity.IsAuthenticated)
     {
-        <h2> Welcome to the West Virginia University at Parkersburg Purchase Requisition<br /><br />Authorized Personnel Only</h2>
+        <h2>Welcome to the West Virginia University at Parkersburg Purchase Requisition<br /><br />Authorized Personnel Only</h2>
     }
 
 </div>
