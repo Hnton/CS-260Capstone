@@ -14,7 +14,7 @@ namespace PurchaseRequisition.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        [Authorize(Roles = "Admin, CFO")]
+        [Authorize(Roles = "Admin, CFO, Purchasing")]
         // Display BudgetCodes with Amount
         public ActionResult Index()
         {

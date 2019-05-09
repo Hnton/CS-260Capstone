@@ -81,6 +81,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.BusinessJustification)
                 </td>
+                <td>
+                    @Html.ActionLink("View Items", "viewItems", "Auditor", new { bus = item.BusinessJustification }, null)
+                </td>
 
             </tr>
         }

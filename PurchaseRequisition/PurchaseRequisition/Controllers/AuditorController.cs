@@ -2,6 +2,7 @@
 using PurchaseRequisition.Models.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +17,16 @@ namespace PurchaseRequisition.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        // GET: Requests
+        public ActionResult viewItems(string bus)
+        {
+
+            var requests = db.Requests.Where(i => i.Order.BusinessJustification.Equals(bus)).Include(r => r.Item).Include(r => r.Order).Include(r => r.Vendor);
+            ViewBag.TotalEstimatedAmount = db.Requests.Where(e => e.Order.BusinessJustification.Equals(bus)).Sum(s => s.EstimatedTotal);
+            ViewBag.TotalPaidAmount = db.Requests.Where(e => e.Order.BusinessJustification.Equals(bus)).Sum(s => s.PaidTotal);
+            return View(requests.ToList());
         }
 
         // GET: Auditor

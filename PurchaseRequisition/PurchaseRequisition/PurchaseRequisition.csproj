@@ -587,6 +587,7 @@
     <Content Include="Views\Orders\_Denied.cshtml" />
     <Content Include="Views\Orders\_Pending.cshtml" />
     <Content Include="Views\Orders\_Cancelled.cshtml" />
+    <Content Include="Views\Auditor\viewItems.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

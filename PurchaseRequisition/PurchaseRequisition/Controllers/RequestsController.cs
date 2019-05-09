@@ -20,8 +20,8 @@ namespace PurchaseRequisition.Controllers
         {
 
             var requests = db.Requests.Where(i=> i.Order.BusinessJustification.Equals(bus)).Include(r => r.Item).Include(r => r.Order).Include(r => r.Vendor);
-            ViewBag.TotalAmount = db.Requests.Where(e => e.Order.BusinessJustification.Equals(bus)).Sum(s => s.PaidTotal);
-
+            ViewBag.TotalEstimatedAmount = db.Requests.Where(e => e.Order.BusinessJustification.Equals(bus)).Sum(s => s.EstimatedTotal);
+            ViewBag.TotalPaidAmount = db.Requests.Where(e => e.Order.BusinessJustification.Equals(bus)).Sum(s => s.PaidTotal);
             return View(requests.ToList());
         }
 

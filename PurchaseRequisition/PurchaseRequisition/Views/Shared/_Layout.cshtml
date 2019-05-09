@@ -51,6 +51,7 @@
                     if (User.IsInRole("CFO"))
                     {
                         @Html.ActionLink("Budgets", "Index", "Budgets", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Approvals", "Index", "Orders", new { area = "" }, new { @class = "navbar-brand" })
 
 
                     }
@@ -64,6 +65,7 @@
                     if (User.IsInRole("Purchasing"))
                     {
                         @Html.ActionLink("Approved Orders", "Approved", "Purchase", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Budgets", "Index", "Budgets", new { area = "" }, new { @class = "navbar-brand" })
                     }
                 }
 
